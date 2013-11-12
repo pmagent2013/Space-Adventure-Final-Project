@@ -42,6 +42,6 @@ function Explore(location)
 {
  if (location==="")
  {
-  document.getElementById('').innerHTML=
+  document.getElementById('outputDiv').innerHTML=
  } 
 }
