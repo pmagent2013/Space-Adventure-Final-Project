@@ -34,8 +34,20 @@ function getPic(picID)
 //main functions
 function picSwitcher(imgID)
 {
- imgName='images/'+imgID+'.JPG';
- document.getElementById('imgMain').src=imgName;
+  imgName='images/'+imgID+'.JPG';
+  document.getElementById('imgMain').src=imgName;
+}
+
+function characterPic(selfie)
+{
+  document.getElementById('speakerPic').innerHTML = "<img src='images/"+selfie+".jpg' height='90px' width='45px'>";
+}
+
+function startGame()
+{
+  picSwitcher('shipOuter');
+  characterPic('ronan');
+  
 }
 
 function Explore(location)
