@@ -50,10 +50,11 @@ function startGame()
   
 }
 
-function Explore(location)
+/*function Explore(location)
 {
  if (location==="")
  {
   document.getElementById('outputDiv').innerHTML=
  } 
 }
+*/
