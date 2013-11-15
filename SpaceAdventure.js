@@ -1,6 +1,6 @@
 //Character Creation Functions
 
-var name="", gun=false, teleporter=false, comm=false, pic="", mainPic="shipOuter";
+var name="", gun=false, teleporter=false, comm=false, pic="", mainPic="shipOuter", avatarPic="";
 
 function getName()
 {
@@ -38,18 +38,36 @@ function picSwitcher(imgID)
   document.getElementById('imgMain').src=imgName;
 }
 
-function characterPic(selfie)
+function avatar(ava)
 {
-  document.getElementById('speakerPic').innerHTML = "<img src='images/"+selfie+".jpg' height='90px' width='45px'>";
+  if(ava==='ronan')
+  {
+	avatarPic="ronan";
+  }
+  else if(ava==='john')
+  {
+	avatarPic="john";
+  }
+  else if(ava='mckay')
+  {
+	avatarPic==="mckay";
+  }
+}
+
+function characterPic()
+{
+  document.getElementById('speakerPic').innerHTML = "<img src='images/"+avatarPic+".jpg' height='90px' width='45px'>";
 }
 
 function startGame()
 {
-  picSwitcher('shipOuter');
-  characterPic('ronan');
+  startScreen.style.display='none'
+  characterCreate.style.display='block'
+  
+ 
   
 }
-
+ //characterPic('ronan');
 /*function Explore(location)
 {
  if (location==="")

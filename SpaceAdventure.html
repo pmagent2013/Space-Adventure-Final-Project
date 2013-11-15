@@ -10,6 +10,10 @@
 
 <body onload="('picSwitcher(shipOuter2)')">
 
+
+
+<!--START SCREEN DIV-->
+<div id="startScreen">
 <div style="text-align:center" id="imgDiv">
 <img id="imgMain" src="images/shipOuter2.jpg" height="450px" width="90%">
 </div>
@@ -20,6 +24,42 @@
 </div>
 <div id="speakerPic"><div id="speechDiv">
 </div></div>
+</div>
+
+
+
+
+
+<!--CHARACTER CREATION SCREEN-->
+<div id="characterCreate" style="display: none">
+<div style="text-align:center" id="avatarSelect">
+<h1>Select Your Avatar</h1>
+<img src="images/ronan.jpg" height="300px" width="200px">
+<img src="images/john.jpg" height="300px" width="200px">
+<img src="images/mckay.jpg" height="300px" width="200px">
+<br>
+<input type='button' style="width:200px" value='Select' onclick="avatar('ronan');">
+<input type='button' style="width:200px" value='Select' onclick="avatar('john');">
+<input type='button' style="width:200px" value='Select' onclick="avatar('mckay');">
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
 </body>
 
 </html>
