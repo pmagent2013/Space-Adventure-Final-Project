@@ -38,21 +38,34 @@
 <img src="images/john.jpg" height="300px" width="200px">
 <img src="images/mckay.jpg" height="300px" width="200px">
 <br>
-<input type='button' style="width:200px" value='Select' onclick="avatar('ronan');">
-<input type='button' style="width:200px" value='Select' onclick="avatar('john');">
-<input type='button' style="width:200px" value='Select' onclick="avatar('mckay');">
-
-
+<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', characterCreate2.style.display='block', avatar('ronan');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', characterCreate2.style.display='block', avatar('john');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', characterCreate2.style.display='block', avatar('mckay');">
+</div>
 </div>
 
 
 
 
 
-
-
+<!--CHARACTER CREATION SCREEN 2-->
+<div id="characterCreate2" style="display: none">
+<div style="text-align:center" id="avatarSelect">
+<h1>Select Your Characters Starting Item</h1>
+<p style="text-align:left">
+The gun allows you to kill those who oppose you<br>
+The teleporter allows you to teleport up to the ship no matter your location on a planet<br>
+The communicator allows you to contact the ships ai even when off ship<br>
+</p>
+<img src="images/gun.jpg" height="300px" width="200px">
+<img src="images/teleporter.jpg" height="300px" width="200px">
+<img src="images/communicator.jpg" height="300px" width="200px">
+<br>
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', avatar('ronan');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', avatar('john');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.display='block', avatar('mckay');">
 </div>
-
+</div>
 
 
 
