@@ -1,6 +1,6 @@
 //Character Creation Functions
 
-var name="", gun=false, teleporter=false, comm=false, pic="", mainPic="shipOuter", avatarPic="";
+var name="", gun=false, teleporter=false, comm=false, pic="", mainPic="shipOuter", avatarPic="", advanceTalkCounter=1;
 
 function getName()
 {
@@ -54,14 +54,35 @@ function avatar(ava)
   }
 }
 
-function characterPic()
+function characterPic(avatarIMG)
 {
-  document.getElementById('speakerPic').innerHTML = "<img src='images/"+avatarPic+".jpg' height='115px' width='75px'>";
+  
+  document.getElementById('speakerPic').innerHTML = "<img src='images/"+avatarIMG+".jpg' height='115px' width='75px'>";
 }
 
 function textDisplay(text)
 {
-  document.getElementById('textBox').innerHTML = ""+text;
+  ai='ai'
+  document.getElementById('speakerPic').innerHTML = document.getElementById('speakerPic').innerHTML + text + '<input type="button" value="Next" onClick="advanceTalk();">';
+}
+
+function advanceTalk(pic, text)
+{
+	//ai, \'Hello, I am this ships onboard AI\'
+	
+	if(advanceTalkCounter===1)
+	{
+		characterPic('ai');
+		textDisplay('Hello, I am this ships onboard AI');
+		advanceTalkCounter++;
+	}
+	else if(advanceTalkCounter===2)
+	{
+		characterPic(avatarPic);
+		textDisplay('How did i get here?');
+		advanceTalkCounter++;
+	}
+	
 }
 
 function startGame()
