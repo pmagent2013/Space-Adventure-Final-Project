@@ -48,15 +48,20 @@ function avatar(ava)
   {
 	avatarPic="john";
   }
-  else if(ava='mckay')
+  else if(ava==='mckay')
   {
-	avatarPic==="mckay";
+	avatarPic="mckay";
   }
 }
 
 function characterPic()
 {
-  document.getElementById('speakerPic').innerHTML = "<img src='images/"+avatarPic+".jpg' height='90px' width='45px'>";
+  document.getElementById('speakerPic').innerHTML = "<img src='images/"+avatarPic+".jpg' height='115px' width='75px'>";
+}
+
+function textDisplay(text)
+{
+  document.getElementById('textBox').innerHTML = ""+text;
 }
 
 function startGame()

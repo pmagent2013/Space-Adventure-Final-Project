@@ -22,8 +22,7 @@
 <!--display=block-->
 <input type='button' height='100px' width='80px' value='Start Game' onclick="this.style.display='none', startGame();">
 </div>
-<div id="speakerPic"><div id="speechDiv">
-</div></div>
+</div>
 </div>
 
 
@@ -57,13 +56,13 @@ The gun allows you to kill those who oppose you<br>
 The teleporter allows you to teleport up to the ship no matter your location on a planet<br>
 The communicator allows you to contact the ships ai even when off ship<br>
 </p>
-<img src="images/gun.jpg" height="300px" width="200px">
-<img src="images/teleporter.jpg" height="300px" width="200px">
-<img src="images/communicator.jpg" height="300px" width="200px">
+<img src="images/gun.jpg" height="200px" width="200px">
+<img src="images/teleporter.jpg" height="200px" width="200px">
+<img src="images/communicator.jpg" height="200px" width="200px">
 <br>
-<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', avatar('ronan');">
-<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', avatar('john');">
-<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.display='block', avatar('mckay');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', characterPic(), getTrait('gun');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', characterPic(), textDisplay('hi'), getTrait('teleporter');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', characterPic(), textDisplay('hi'), getTrait('comm');">
 </div>
 </div>
 
@@ -71,8 +70,17 @@ The communicator allows you to contact the ships ai even when off ship<br>
 
 
 
+<!--Beginning Game Screen-->
+<div id="game" style="display: none">
+<div style="text-align:center" id="avatarSelect">
+<img id="imgMain" src="images/start.jpg" height="450px" width="90%">
+<br>
+<div id="speakerPic" style="text-align:left; border:2px solid" ><div id="textBox" onLoad="textDisplay('hifijkofahguijohfgsaijohfgasfgdsjlh');" style="text-align:center"></div></div>
 
 
+
+</div>
+</div>
 </body>
 
 </html>
