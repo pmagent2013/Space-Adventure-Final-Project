@@ -60,9 +60,9 @@ The communicator allows you to contact the ships ai even when off ship<br>
 <img src="images/teleporter.jpg" height="200px" width="200px">
 <img src="images/communicator.jpg" height="200px" width="200px">
 <br>
-<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('gun');">
-<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('teleporter');">
-<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', game.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('comm');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', gameBegin.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('gun');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', gameBegin.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('teleporter');">
+<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', gameBegin.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('comm');">
 </div>
 </div>
 
@@ -71,14 +71,34 @@ The communicator allows you to contact the ships ai even when off ship<br>
 
 
 <!--Beginning Game Screen-->
-<div id="game" style="display: none">
+<div id="gameBegin" style="display: none">
 <div style="text-align:center" id="avatarSelect">
 <img id="imgMain" src="images/start.jpg" height="450px" width="90%">
 <br>
 <div id="speakerPic" style="text-align:left; text-align:middle; border:2px solid" ></div>
+</div>
+</div>
 
 
+<!--Game Screen-->
+<div id="game" style="display: none">
+<div style="text-align:center">
+<img id="imgMain" src="images/start.jpg" height="450px" width="90%">
+<br>
+<div id='buttonStart'>
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('stasisChamber');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('stasisChamber');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('stasisChamber');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('stasisChamber');">
+</div>
+<div id='buttonExplore' style="display: none">
+<input type='button' height='100px' width='200px' value='Control Room' onClick="picSwitcher('shipControlRoom');">
+<input type='button' height='100px' width='200px' value='Embarkation Room' onClick="picSwitcher('shipMain');">
 
+</div>
+</div>
+<br>
+<div id="speakerPic" style="text-align:left; text-align:middle; border:2px solid" ></div>
 </div>
 </div>
 </body>
