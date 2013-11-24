@@ -289,6 +289,55 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		
 	}
 	
+	else if(advanceTalkCounter===516)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('I can\'t teleport off the ship from here. I need to be in the embarkation room.');
+		advanceTalkCounter++;
+		
+		
+	}
+	else if(advanceTalkCounter===518)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('If I\'m ready i can teleport to Dakara now.');
+		advanceTalkCounter++;
+		
+		
+	}
+	else if(advanceTalkCounter===520)
+	{
+		characterPic2('ai');
+		textDisplay2('I suggest you explore the entire ship before you beam down to Dakara');
+		advanceTalkCounter++;
+		
+		
+	}
+	else if(advanceTalkCounter===521)
+	{
+		characterPic2('ai');
+		textDisplay2('This ship is very large, unfortunately you cant access most areas due to the damage.');
+		advanceTalkCounter++;
+		
+		
+	}
+	else if(advanceTalkCounter===522)
+	{
+		characterPic2('ai');
+		textDisplay2('Time is of the importance');
+		advanceTalkCounter++;
+		
+		
+	}
+	else if(advanceTalkCounter===523)
+	{
+		characterPic2('ai');
+		textDisplay2('I have nothing else to say currently');
+		advanceTalkCounter++;
+		
+		
+	}
+	
 }
 
 function gameShip()
@@ -348,5 +397,46 @@ function search(location)
     advanceTalk();
     buttonSearch_ControlRoom.style.display='block'
  }
+}
+
+function talk(location)
+{
+if(location==="stasisChamber")
+  {
+  	advanceTalkCounter=520;
+    advanceTalk();
+  }
+  if(location==="embarkationRoom")
+  {
+    advanceTalkCounter=520;
+	advanceTalk();
+  	
+  }
+  if(location==="controlRoom")
+  {
+  	advanceTalkCounter=520;
+    advanceTalk();
+  }
+}
+
+function teleport(location)
+{
+ if(location==="stasisChamber")
+  {
+  	advanceTalkCounter=516;
+    advanceTalk();
+  }
+  if(location==="embarkationRoom")
+  {
+    advanceTalkCounter=518;
+	advanceTalk();
+  	buttonStart_EmbarkationRoom.style.display='none'
+	buttonTeleport_EmbarkationRoom.style.display='block'
+  }
+  if(location==="controlRoom")
+  {
+  	advanceTalkCounter=516;
+    advanceTalk();
+  }
 }
 
