@@ -112,6 +112,7 @@ The communicator allows you to contact the ships ai even when off ship<br>
 <input type='button' height='100px' width='200px' value='Search' onClick="search('controlRoom');">
 <input type='button' height='100px' width='200px' value='Talk' onClick="talk('controlRoom');">
 <input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('controlRoom');">
+<input type='button' height='100px' width='200px' value='Hyperdrive' onClick="hyperdrive();">
 </div>
 
 <div id='buttonExplore_ControlRoom' style="display: none" style="display: none">
@@ -142,11 +143,77 @@ The communicator allows you to contact the ships ai even when off ship<br>
 </div>
 
 <div id='buttonTeleport_EmbarkationRoom' style="display: none" style="display: none">
-<input type='button' height='100px' width='200px' value='Dakara' onClick=" buttonSearch_EmbarkationRoom.style.display='none', buttonStart_Dakara.style.display='block', picSwitcher('Dakara');">
-<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonSearch_EmbarkationRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+<input type='button' height='100px' width='200px' value='Dakara' onClick=" buttonTeleport_EmbarkationRoom.style.display='none', buttonStart_DakaraVillage.style.display='block', picSwitcher('Dakara');">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+</div>
+
+<div id='buttonTeleport_EmbarkationRoom2' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Orilla' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_OrillaCity.style.display='block', picSwitcher('orillaCity');">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_EmbarkationRoom2.style.display='block'">
 </div>
 
 
+<!--dakara-->
+<!--village-->
+<div id='buttonStart_DakaraVillage' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('dakaraVillage');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('dakaraVillage');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('dakaraVillage');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('dakaraVillage');">
+</div>
+
+<div id='buttonExplore_DakaraVillage' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Temple' onClick="picSwitcher('dakaraTemple'); buttonExplore_DakaraVillage.style.display='none', buttonStart_DakaraTemple.style.display='block'">
+<input type='button' height='100px' width='200px' value='Ruins' onClick="picSwitcher('dakaraRuins'); buttonExplore_DakaraVillage.style.display='none', buttonStart_DakaraRuins.style.display='block'">
+</div>
+
+<div id='buttonSearch_DakaraVillage' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_DakaraVillage.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+</div>
+
+<div id='buttonTeleport_DakaraVillage' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Ship' onClick=" buttonTeleport_DakaraVillage.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_DakaraVillage.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+</div>
+
+<!--temple-->
+<div id='buttonStart_DakaraTemple' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('dakaraTemple');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('dakaraTemple');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('dakaraTemple');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('dakaraTemple');">
+</div>
+
+<div id='buttonExplore_DakaraTemple' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Village' onClick="picSwitcher('Dakara'); buttonExplore_DakaraTemple.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+<input type='button' height='100px' width='200px' value='Ruins' onClick="picSwitcher('dakaraRuins'); buttonExplore_DakaraTemple.style.display='none', buttonStart_DakaraRuins.style.display='block'">
+</div>
+
+<div id='buttonSearch_DakaraTemple' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_DakaraTemple.style.display='none', buttonStart_DakaraTemple.style.display='block'">
+</div>
+
+<!--ruins-->
+<div id='buttonStart_DakaraRuins' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('dakaraRuins');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('dakaraRuins');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('dakaraRuins');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('dakaraRuins');">
+</div>
+
+<div id='buttonExplore_DakaraRuins' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Village' onClick="picSwitcher('Dakara'); buttonExplore_DakaraRuins.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+<input type='button' height='100px' width='200px' value='Temple' onClick="picSwitcher('dakaraTemple'); buttonExplore_DakaraRuins.style.display='none', buttonStart_DakaraTemple.style.display='block'">
+</div>
+
+<div id='buttonSearch_DakaraRuins' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_DakaraRuins.style.display='none', buttonStart_DakaraRuins.style.display='block'">
+</div>
+
+
+
+
+<!--speaker box-->
 <div id="speakerPic2" style="text-align:left; text-align:middle; border:2px solid">
 
 </div>
