@@ -1,6 +1,6 @@
 //Character Creation Functions
 
-var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, pic="", mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1;
+var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false,councilTalk=false, councilApprove=false, asgardWeapons=false, pic="", mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1;
 
 function getName()
 {
@@ -645,8 +645,404 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	}
 	else if(advanceTalkCounter===718)
 	{
-		characterPic2('ai');
+		characterPic2(avatarPic);
 		textDisplay2('I can beam down to Orilla if I\'m ready.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===720)
+	{
+		characterPic2('thor');
+		textDisplay2('Hello traveler, I am Thor of the Asgard. Welcome to Orilla');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===721)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('I need a new hyperdrive for my ship, I must get back to my planet to warn them of the coming Wraith attack.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===722)
+	{
+		characterPic2('thor');
+		textDisplay2('The wraith have never been a problem for us. As for the hyperdrive you must talk to the council about that.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===723)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Why have the Wraith never been a problem for you?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===724)
+	{
+		characterPic2('thor');
+		textDisplay2('We are technologically superior to them. Past that I can\'t tell you anymore, you would need to talk to the council.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===725)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thank you, i will go to the council now.');
+		advanceTalkCounter++;
+				
+	}
+	
+	else if(advanceTalkCounter===727)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Hello, I am a traveler who needs a new hyperdrive to reach my planet to warn them before the Wraith arrive.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===728)
+	{
+		characterPic2('archon');
+		textDisplay2('Yes, Thor told us you would be coming.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===729)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('So, are you willing to help?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===730)
+	{
+		characterPic2('archon');
+		textDisplay2('That has not yet been decided.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===731)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Why not? I must warn my people!');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===732)
+	{
+		characterPic2('archon');
+		textDisplay2('The Asgard do not part with the technology lightly, our technological advantage is all that we have.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===731)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Why not? I must warn my people!');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===732)
+	{
+		characterPic2('archon');
+		textDisplay2('The Asgard do not part with the technology lightly, our technological advantage is all that we have.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===733)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Well while you think it over, can you tell me why you never worry about the Wraith?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===734)
+	{
+		characterPic2('archon');
+		textDisplay2('The Asgard and the Wraith first met over 3 centuries ago. They outnumbered us 100 to 1. We tried to negotiate a truce, but all the wanted was war.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===735)
+	{
+		characterPic2('archon');
+		textDisplay2('In the inital years of the war things went very badly, our ships were more powerfull but the enemy numbers were too great.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===736)
+	{
+		characterPic2('archon');
+		textDisplay2('We had our fleet spread out trying to defend the galaxies from the Wraith.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===737)
+	{
+		characterPic2('archon');
+		textDisplay2('A single Asgard ship was a match for five Wraith ships. But because we tried defending so many planets we could only spare one to ships per planet.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===738)
+	{
+		characterPic2('archon');
+		textDisplay2('The wraith would send ten ships to every planet we defended. There was nothing we could do. We were losing ships and the war rapidly.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===739)
+	{
+		characterPic2('archon');
+		textDisplay2('We made the only decision we could, we fell back to our five core worlds. We developed advanced defense satelites and even more power ships.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===740)
+	{
+		characterPic2('archon');
+		textDisplay2('When the Wraith came for us, we were ready. The battle lasted months, at the end, we had destroyed over 1,000 wraith ships, and suffered no major casualties.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===741)
+	{
+		characterPic2('archon');
+		textDisplay2('The Wraith came again and again for over 100 years before deciding we weren\'t worth it. We have lived free of fear from the wraith for over a century now.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===742)
+	{
+		characterPic2('archon');
+		textDisplay2('So you see, even if you could defend againist the first wave you never could never win. ');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===743)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Then help us, send ships and some satelites and help defend Earth! ');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===744)
+	{
+		characterPic2('archon');
+		textDisplay2('That is a decision the entire council must make, if we decide to help our ships will arrive at earth when they are needed. ');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===745)
+	{
+		characterPic2('archon');
+		textDisplay2('For now, you may purchase a hyperdrive from us. Go to the shipyard and talk to Loki, we will let him know your\'e coming. ');
+		advanceTalkCounter++;
+		councilApprove=true;
+		councilTalk=true;
+	}
+	else if(advanceTalkCounter===746)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===748)
+	{
+		characterPic2('archon');
+		textDisplay2('We have not reached a decision yet.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===749)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===751)
+	{
+		characterPic2('loki');
+		textDisplay2('I can\'t sell you a hyperdrive without the council\'s approval.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===752)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===754)
+	{
+		characterPic2('loki');
+		textDisplay2('The council has approved the purchase of a new hyperdrive. You better have the gold to pay for it, otherwise you will be stranded here forever.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===755)
+	{
+		characterPic2(avatarPic);
+		if((goldChest || goldChest2) === true)
+		{
+		textDisplay2('Yes i have the money to pay for it');
+		advanceTalkCounter++;
+		}
+		else if(goldChest && goldChest2 === false)
+		{
+		textDisplay2('Shit! Well I guess im trapped here, what\'s good to eat?');
+		}
+						
+	}
+	else if(advanceTalkCounter===756)
+	{
+		characterPic2('loki');
+		textDisplay2('Good here you go.');
+		newHyperdrive=true;
+		if((goldChest && goldChest2)===true)
+		{
+		 goldChest=false;
+		}
+		else if(goldChest === false && goldChest2===true)
+		{
+		 goldChest2=false;
+		}
+		else if(goldChest === true && goldChest2===false)
+		{
+		 goldChest=false;
+		}
+		advanceTalkCounter++;
+								
+	}
+	else if(advanceTalkCounter===757)
+	{
+		characterPic2('loki');
+		textDisplay2('If you have any more gold, i could be sell you advanced Asgard Beam Weapons for your ship if you don\'t tell anyone.');
+		advanceTalkCounter++;
+								
+	}
+	else if(advanceTalkCounter===758)
+	{
+		characterPic2(avatarPic);
+		if((goldChest || goldChest2)===true)
+		{
+		textDisplay2('I have more gold, please sell me the weapon system.');
+		asgardWeapons=true;
+		}
+		else
+		{
+		textDisplay2('Sorry, no more gold. Thanks for the offer though.');
+		}
+		advanceTalkCounter++;
+								
+	}
+	else if(advanceTalkCounter===759)
+	{
+		characterPic2('loki');
+		if(asgardWeapons===true)
+		{
+		textDisplay2('Here you go.');
+		}
+		else
+		{
+		textDisplay2('Oh well, have a good one.');
+		}
+		advanceTalkCounter++;
+								
+	}
+	else if(advanceTalkCounter===760)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+								
+	}
+	else if(advanceTalkCounter===790)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('I can\'t beam to the ship from here, i need to be in the city.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===800)
+	{
+		characterPic2('ai');
+		textDisplay2('Welcome back aboard, i see you have retrieved a new hyperdrive, bring it over to the console.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===801)
+	{
+		characterPic2('ai');
+		textDisplay2('The air filtration system failed while you were dwon on Orilla, without a new one I fear you will not survive the journey to earth.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===802)
+	{
+		characterPic2('ai');
+		textDisplay2('Luckily there is a planet nearby that should have what we need to repair it.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===803)
+	{
+		characterPic2('ai');
+		textDisplay2('These people are very simple, they will not have it to trade for, you will need to search for it yourself. Luckily you don\'t need to find anything to trade with on Orilla.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===804)
+	{
+		characterPic2('ai');
+		textDisplay2('If you are ready to engage the hyperdrive go to the control room.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===805)
+	{
+		if(asgardWeapons===true)
+		{
+		characterPic2('ai');
+		textDisplay2('I see you have also aquired some asgard weaponry, hopefully we won\;t need it.');
+		}
+		else if(asgardWeapons===false)
+		{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		}
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===806)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}
+	
+	else if(advanceTalkCounter===810)
+	{
+		characterPic2('ai');
+		textDisplay2('The ship has arrived at Abydos. The air in here is becoming quickly toxic. If you can\'t secure what we need to repair the filtration system you will not survive.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===811)
+	{
+		characterPic2('ai');
+		textDisplay2('The indigenious population of Abydos are very simple people.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===812)
+	{
+		characterPic2('ai');
+		textDisplay2('When you\'re ready, beam down to the planet.');
 		advanceTalkCounter++;
 				
 	}
@@ -692,6 +1088,21 @@ function explore(location)
   {
     buttonStart_DakaraRuins.style.display='none'
 	buttonExplore_DakaraRuins.style.display='block'
+  }
+  if(location==="orillaCity")
+  {
+    buttonStart_OrillaCity.style.display='none'
+	buttonExplore_OrillaCity.style.display='block'
+  }
+  if(location==="orillaCouncil")
+  {
+    buttonStart_OrillaCouncil.style.display='none'
+	buttonExplore_OrillaCouncil.style.display='block'
+  }
+  if(location==="orillaShipyard")
+  {
+    buttonStart_OrillaShipyard.style.display='none'
+	buttonExplore_OrillaShipyard.style.display='block'
   }
 }
 
@@ -763,6 +1174,24 @@ function search(location)
     buttonSearch_DakaraRuins.style.display='block'
 	goldChest2=true;
 	}
+ }
+ if (location==="orillaCity")
+ {
+    advanceTalkCounter=500;
+    advanceTalk();
+	
+ }
+ if (location==="orillaCouncil")
+ {
+    advanceTalkCounter=500;
+    advanceTalk();
+	
+ }
+ if (location==="orillaShipyard")
+ {
+    advanceTalkCounter=500;
+    advanceTalk();
+	
  } 
  
 }
@@ -799,6 +1228,37 @@ if(location==="stasisChamber")
   {
 	advanceTalkCounter=625;
     advanceTalk();
+  }
+  if(location==="orillaCity")
+  {
+	advanceTalkCounter=720;
+    advanceTalk();
+  }
+  if(location==="orillaCouncil")
+  {
+	if(councilTalk===false)
+	{
+	advanceTalkCounter=727;
+	advanceTalk();
+	}
+	else
+	{
+	advanceTalkCounter=748;
+	advanceTalk();
+	}
+  }
+  if(location==="orillaShipyard")
+  {
+	if(councilApprove===false)
+	{
+	advanceTalkCounter=751;
+	advanceTalk();
+	}
+	else
+	{
+	advanceTalkCounter=754;
+	advanceTalk();
+	}
   }
   
 }
@@ -854,6 +1314,28 @@ function teleport(location)
   	advanceTalkCounter=690;
     advanceTalk();
   }
+  if(location==="orillaCity")
+  {
+    advanceTalkCounter=621;
+	advanceTalk();
+  	buttonStart_OrillaCity.style.display='none'
+	buttonTeleport_OrillaCity.style.display='block'
+	if(newHyperdrive===true)
+	{
+	advanceTalkCounter=800;
+	advanceTalk();
+	}
+  }
+  if(location==="orillaCouncil")
+  {
+  	advanceTalkCounter=790;
+    advanceTalk();
+  }
+  if(location==="orillaShipyard")
+  {
+  	advanceTalkCounter=790;
+    advanceTalk();
+  }
 }
 
 
@@ -867,8 +1349,20 @@ function hyperdrive()
  }
  else
  {
-  advanceTalkCounter=716;
+  advanceTalkCounter=714;
   advanceTalk();
  }
+ if(powerCore===true && newhyperdrive===true && airFilter===false && hyperdriveCounter===1)
+ {
+  hyperdriveCounter++;
+  advanceTalkCounter=810;
+  advanceTalk();
+ }
+ else
+ {
+  advanceTalkCounter=714;
+  advanceTalk();
+ }
+ 
 }
 

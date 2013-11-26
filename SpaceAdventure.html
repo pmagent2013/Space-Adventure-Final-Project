@@ -213,6 +213,69 @@ The communicator allows you to contact the ships ai even when off ship<br>
 
 
 
+
+<!--orilla-->
+<!--city-->
+
+<div id='buttonStart_OrillaCity' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('orillaCity');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('orillaCity');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('orillaCity');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('orillaCity');">
+</div>
+
+<div id='buttonExplore_OrillaCity' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Council' onClick="picSwitcher('orillaCouncil'); buttonExplore_OrillaCity.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
+<input type='button' height='100px' width='200px' value='Shipyard' onClick="picSwitcher('orillaShipyard'); buttonExplore_OrillaCity.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
+</div>
+
+<div id='buttonSearch_OrillaCity' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_OrillaCity.style.display='none', buttonStart_OrillaCity.style.display='block'">
+</div>
+
+<div id='buttonTeleport_OrillaCity' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Ship' onClick=" buttonTeleport_OrillaCity.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_OrillaCity.style.display='none', buttonStart_OrillaCity.style.display='block'">
+</div>
+
+<!--council-->
+
+<div id='buttonStart_OrillaCouncil' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('orillaCouncil');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('orillaCouncil');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('orillaCouncil');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('orillaCouncil');">
+</div>
+
+<div id='buttonExplore_OrillaCouncil' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('orillaCity'); buttonExplore_OrillaCouncil.style.display='none', buttonStart_OrillaCity.style.display='block'">
+<input type='button' height='100px' width='200px' value='Shipyard' onClick="picSwitcher('orillaShipyard'); buttonExplore_OrillaCouncil.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
+</div>
+
+<div id='buttonSearch_OrillaCouncil' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_OrillaCouncil.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
+</div>
+<!--shipyard-->
+
+<div id='buttonStart_OrillaShipyard' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('orillaShipyard');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('orillaShipyard');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('orillaShipyard');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('orillaShipyard');">
+</div>
+
+<div id='buttonExplore_OrillaShipyard' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('orillaCity'); buttonExplore_OrillaShipyard.style.display='none', buttonStart_OrillaCity.style.display='block'">
+<input type='button' height='100px' width='200px' value='Council' onClick="picSwitcher('orillaCouncil'); buttonExplore_OrillaShipyard.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
+</div>
+
+<div id='buttonSearch_OrillaShipyard' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_OrillaShipyard.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
+</div>
+
+
+
+
 <!--speaker box-->
 <div id="speakerPic2" style="text-align:left; text-align:middle; border:2px solid">
 
