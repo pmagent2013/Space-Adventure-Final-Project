@@ -149,9 +149,13 @@ The communicator allows you to contact the ships ai even when off ship<br>
 
 <div id='buttonTeleport_EmbarkationRoom2' style="display: none" style="display: none">
 <input type='button' height='100px' width='200px' value='Orilla' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_OrillaCity.style.display='block', picSwitcher('orillaCity');">
-<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_EmbarkationRoom2.style.display='block'">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
 </div>
 
+<div id='buttonTeleport_EmbarkationRoom3' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Abydos' onClick=" buttonTeleport_EmbarkationRoom3.style.display='none', buttonStart_AbydosPyramid.style.display='block', picSwitcher('abydosPyramid');">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom3.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+</div>
 
 <!--dakara-->
 <!--village-->
@@ -274,6 +278,68 @@ The communicator allows you to contact the ships ai even when off ship<br>
 </div>
 
 
+
+<!--abydos-->
+<!--city-->
+
+<div id='buttonStart_AbydosCity' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('abydosCity');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('abydosCity');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('abydosCity');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('abydosCity');">
+</div>
+
+<div id='buttonExplore_AbydosCity' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pyramid' onClick="picSwitcher('abydosPyramid'); buttonExplore_AbydosCity.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+<input type='button' height='100px' width='200px' value='Relic' onClick="picSwitcher('abydosRelic'); buttonExplore_AbydosCity.style.display='none', buttonStart_AbydosRelic.style.display='block'">
+</div>
+
+<div id='buttonSearch_AbydosCity' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosCity.style.display='none', buttonStart_AbydosCity.style.display='block'">
+</div>
+
+
+
+<!--pyramid-->
+
+<div id='buttonStart_AbydosPyramid' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('abydosPyramid');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('abydosPyramid');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('abydosPyramid');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('abydosPyramid');">
+</div>
+
+<div id='buttonExplore_AbydosPyramid' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('abydosCity'); buttonExplore_AbydosPyramid.style.display='none', buttonStart_AbydosCity.style.display='block'">
+<input type='button' height='100px' width='200px' value='Relic' onClick="picSwitcher('abydosRelic'); buttonExplore_AbydosPyramid.style.display='none', buttonStart_AbydosRelic.style.display='block'">
+</div>
+
+<div id='buttonSearch_AbydosPyramid' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosPyramid.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+</div>
+
+<div id='buttonTeleport_AbydosPyramid' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Ship' onClick=" buttonTeleport_AbydosPyramid.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
+<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_AbydosPyramid.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+</div>
+
+<!--relic-->
+
+<div id='buttonStart_AbydosRelic' style="display: none">
+<input type='button' height='100px' width='200px' value='Explore' onClick="explore('abydosRelic');">
+<input type='button' height='100px' width='200px' value='Search' onClick="search('abydosRelic');">
+<input type='button' height='100px' width='200px' value='Talk' onClick="talk('abydosRelic');">
+<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('abydosRelic');">
+</div>
+
+<div id='buttonExplore_AbydosRelic' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('abydosCity'); buttonExplore_AbydosRelic.style.display='none', buttonStart_AbydosCity.style.display='block'">
+<input type='button' height='100px' width='200px' value='Pyramid' onClick="picSwitcher('abydosPyramid'); buttonExplore_AbydosRelic.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+</div>
+
+<div id='buttonSearch_AbydosRelic' style="display: none" style="display: none">
+<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosRelic.style.display='none', buttonStart_AbydosRelic.style.display='block'">
+</div>
 
 
 <!--speaker box-->

@@ -1,6 +1,6 @@
 //Character Creation Functions
 
-var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false,councilTalk=false, councilApprove=false, asgardWeapons=false, pic="", mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1;
+var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=true, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, pic="", mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1;
 
 function getName()
 {
@@ -901,7 +901,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	{
 		characterPic2('loki');
 		textDisplay2('Good here you go.');
-		newHyperdrive=true;
+		newhyperdrive=true;
 		if((goldChest && goldChest2)===true)
 		{
 		 goldChest=false;
@@ -1007,7 +1007,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		if(asgardWeapons===true)
 		{
 		characterPic2('ai');
-		textDisplay2('I see you have also aquired some asgard weaponry, hopefully we won\;t need it.');
+		textDisplay2('I see you have also aquired some asgard weaponry, hopefully we won\'t need it.');
 		}
 		else if(asgardWeapons===false)
 		{
@@ -1046,6 +1046,290 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		advanceTalkCounter++;
 				
 	}
+	else if(advanceTalkCounter===815)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Hello. Anybody here?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===816)
+	{
+		characterPic2('shauri');
+		textDisplay2('Hello, I am Shauri. We have not had visotrs in quite some time');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===817)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('I need to find parts to fix my ships air filtration system. Can you help me?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===818)
+	{
+		characterPic2('shauri');
+		textDisplay2('Honestly I\'m not sure. We are a simple people, our technology is not that advanced. But many ships have crash landed here over the years, perhaps you can find what you need by searching around.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===819)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thank you. Also, can you tell me anything about the Wraith?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===820)
+	{
+		characterPic2('shauri');
+		textDisplay2('Wraith? I\'ve never heard of them. Maybe you can ask Kasuf in the city, he is very wise and is always willing to trade information.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===821)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thank you, I\'ll be sure to talk to him.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===823)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Kasuf, are you here?.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===824)
+	{
+		characterPic2('kasuf');
+		textDisplay2('I am Kasuf, what can i do for you.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===825)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('I was wondering if you could tell me more about the Wraith?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===826)
+	{
+		characterPic2('kasuf');
+		textDisplay2('No one has asked me about the Wraith in a very long time.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===827)
+	{
+		characterPic2('kasuf');
+		textDisplay2('If you bring me an artifact, I will tell you what I can.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===828)
+	{
+		characterPic2(avatarPic);
+		if(artifact===true)
+		{
+		textDisplay2('I found an artifact in the ruins, will this work?.');
+		}
+		else
+		{
+		textDisplay2('I will go try and find one.');
+		}
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===829)
+	{
+		
+		if(artifact===true)
+		{
+		characterPic2('kasuf');
+		textDisplay2('That will go great in my collection. I will tell you what I know.');
+		advanceTalkCounter++;
+		}
+		else
+		{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		}
+		
+				
+	}
+	else if(advanceTalkCounter===830)
+	{
+		characterPic2('kasuf');
+		textDisplay2('The wraith have been the dominate force in the universe for as long as anyone can remember. They have never ventured this far into the universe before but i have heard pleantly of stories from those in other galaxies.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===831)
+	{
+		characterPic2('kasuf');
+		textDisplay2('When they reach a planet they bomb it from orbit destroying all military infrastructure. Then the begin to cull the population, bringing them up to their ships to feast on later.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===832)
+	{
+		characterPic2('kasuf');
+		textDisplay2('There numbers are so large that there are only rumors of those that can oppose them.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===833)
+	{
+		characterPic2('kasuf');
+		textDisplay2('If they never visited your planet before, perhaps if you destroy their ship before they can send a single to their fleet you may be able to stop anymore ships from coming..');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===834)
+	{
+		characterPic2('kasuf');
+		textDisplay2('I have heard stories of a few planets that managed to survive like this. Perhaps it can work for yuor planet as well.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===835)
+	{
+		characterPic2('kasuf');
+		textDisplay2('That\'s all I have to say on the matter, I hope I have been of some help.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===836)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thank you, you have been very helpful');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===837)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===839)
+	{
+		characterPic2('scara');
+		textDisplay2('Hello stranger, my name is Scara.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===840)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Hello, is there anything of interest here?');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===841)
+	{
+		characterPic2('scara');
+		textDisplay2('If you search around you could probably find an artifact or two.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===842)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thank you');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===843)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}	
+	else if(advanceTalkCounter===852)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('There appears to be the parts to fix the air filter.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===854)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('There appears to be an artifact here.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===890)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('I can\'t beam to the ship from here, i need to be in the pyramid.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===900)
+	{
+		characterPic2('ai');
+		textDisplay2('Welcome back aboard, i see you have retrieved the parts to fix the air filtration system.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===901)
+	{
+		characterPic2('ai');
+		textDisplay2('It\'s a good thing too. The oxygen levels are dangeriously low, so go repair it.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===902)
+	{
+		characterPic2('ai');
+		textDisplay2('Good, now that it is fixed, we can travel to earth. With even a little luck, we will reach earth to warn them before the Wraith arrive.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===903)
+	{
+		characterPic2('ai');
+		textDisplay2('When you are ready, go to the control room and engage the hyperdrive.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===904)
+	{
+		characterPic2('ai');
+		textDisplay2('');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===906)
+	{
+		characterPic2('ai');
+		textDisplay2('Wait. The sensors have detected another ship in orbit.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===907)
+	{
+		characterPic2('ai');
+		textDisplay2('It\'s the Wraith! They opened fire, they\'re targeting the hyperdrive, it\'s offline, we can\'t make the jump yet.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===908)
+	{
+		characterPic2('ai');
+		textDisplay2('They\'ve stopped firing, we\'re recieving a communication.');
+		advanceTalkCounter++;
+				
+	}
+	
 }
 
 function gameShip()
@@ -1103,6 +1387,21 @@ function explore(location)
   {
     buttonStart_OrillaShipyard.style.display='none'
 	buttonExplore_OrillaShipyard.style.display='block'
+  }
+  if(location==="abydosCity")
+  {
+    buttonStart_AbydosCity.style.display='none'
+	buttonExplore_AbydosCity.style.display='block'
+  }
+  if(location==="abydosPyramid")
+  {
+    buttonStart_AbydosPyramid.style.display='none'
+	buttonExplore_AbydosPyramid.style.display='block'
+  }
+  if(location==="abydosRelic")
+  {
+    buttonStart_AbydosRelic.style.display='none'
+	buttonExplore_AbydosRelic.style.display='block'
   }
 }
 
@@ -1192,6 +1491,45 @@ function search(location)
     advanceTalkCounter=500;
     advanceTalk();
 	
+ }
+
+if (location==="abydosCity")
+ {
+	if(airFilter===true)
+	{
+	advanceTalkCounter=650;
+    advanceTalk();
+	}
+	else
+	{
+	buttonStart_AbydosCity.style.display='none'
+	advanceTalkCounter=852;
+    advanceTalk();
+    buttonSearch_AbydosCity.style.display='block'
+	airFilter=true;
+	}
+ }
+ if (location==="abydosPyramid")
+ {
+    advanceTalkCounter=500;
+    advanceTalk();
+	
+ }
+ if (location==="abydosRelic")
+ {
+	if(artifact===true)
+	{
+	advanceTalkCounter=650;
+    advanceTalk();
+	}
+	else
+	{
+	buttonStart_AbydosRelic.style.display='none'
+	advanceTalkCounter=854;
+    advanceTalk();
+    buttonSearch_AbydosRelic.style.display='block'
+	artifact=true;
+	}
  } 
  
 }
@@ -1260,6 +1598,21 @@ if(location==="stasisChamber")
 	advanceTalk();
 	}
   }
+  if(location==="abydosPyramid")
+  {
+	advanceTalkCounter=815;
+    advanceTalk();
+  }
+  if(location==="abydosCity")
+  {
+	advanceTalkCounter=823;
+    advanceTalk();
+  }
+  if(location==="abydosRelic")
+  {
+	advanceTalkCounter=839;
+    advanceTalk();
+  }
   
 }
 
@@ -1285,6 +1638,13 @@ function teleport(location)
 	advanceTalk();
   	buttonStart_EmbarkationRoom.style.display='none'
 	buttonTeleport_EmbarkationRoom2.style.display='block'
+	}
+	if(hyperdriveCounter===2)
+    {
+    advanceTalkCounter=898;
+	advanceTalk();
+  	buttonStart_EmbarkationRoom.style.display='none'
+	buttonTeleport_EmbarkationRoom3.style.display='block'
 	}
   }
   if(location==="controlRoom")
@@ -1320,7 +1680,7 @@ function teleport(location)
 	advanceTalk();
   	buttonStart_OrillaCity.style.display='none'
 	buttonTeleport_OrillaCity.style.display='block'
-	if(newHyperdrive===true)
+	if(newhyperdrive===true)
 	{
 	advanceTalkCounter=800;
 	advanceTalk();
@@ -1336,6 +1696,28 @@ function teleport(location)
   	advanceTalkCounter=790;
     advanceTalk();
   }
+  if(location==="abydosPyramid")
+  {
+    advanceTalkCounter=621;
+	advanceTalk();
+  	buttonStart_AbydosPyramid.style.display='none'
+	buttonTeleport_AbydosPyramid.style.display='block'
+	if(airFilter===true)
+	{
+	advanceTalkCounter=900;
+	advanceTalk();
+	}
+  }
+  if(location==="abydosCity")
+  {
+  	advanceTalkCounter=890;
+    advanceTalk();
+  }
+  if(location==="abydosRelic")
+  {
+  	advanceTalkCounter=890;
+    advanceTalk();
+  }
 }
 
 
@@ -1343,19 +1725,21 @@ function hyperdrive()
 {
  if(powerCore===true && newhyperdrive===false && airFilter===false && hyperdriveCounter===0)
  {
-  hyperdriveCounter++;
+  
   advanceTalkCounter=710;
   advanceTalk();
+  hyperdriveCounter++;
  }
- else
- {
-  advanceTalkCounter=714;
-  advanceTalk();
- }
- if(powerCore===true && newhyperdrive===true && airFilter===false && hyperdriveCounter===1)
+ else if(powerCore===true && newhyperdrive===true && airFilter===false && hyperdriveCounter===1)
  {
   hyperdriveCounter++;
   advanceTalkCounter=810;
+  advanceTalk();
+ }
+ else if(powerCore===true && newhyperdrive===true && airFilter===true && hyperdriveCounter===2)
+ {
+  hyperdriveCounter++;
+  advanceTalkCounter=906;
   advanceTalk();
  }
  else
