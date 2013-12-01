@@ -113,6 +113,7 @@ The communicator allows you to contact the ships ai even when off ship<br>
 <input type='button' height='100px' width='200px' value='Talk' onClick="talk('controlRoom');">
 <input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('controlRoom');">
 <input type='button' height='100px' width='200px' value='Hyperdrive' onClick="hyperdrive();">
+<input type='button' height='100px' width='200px' value='Weapon System' onClick="weaponSystem();">
 </div>
 
 <div id='buttonExplore_ControlRoom' style="display: none" style="display: none">
@@ -123,6 +124,13 @@ The communicator allows you to contact the ships ai even when off ship<br>
 <div id='buttonSearch_ControlRoom' style="display: none">
 <input type='button' height='100px' width='200px' value='Access Computer' onClick="advanceTalkCounter=504, advanceTalk(); ">
 <input type='button' height='100px' width='200px' value='Exit' onClick=" buttonSearch_ControlRoom.style.display='none', buttonStart_ControlRoom.style.display='block', advanceTalkCounter=498, advanceTalk();">
+</div>
+
+<div id='buttonWeaponSystem_ControlRoom' style="display: none">
+<input type='button' height='100px' width='200px' value='Railgun' onClick="railgun();">
+<input type='button' height='100px' width='200px' value='Missles' onClick="missles();">
+<input type='button' height='100px' width='200px' value='Divert Power to Shields' onClick="shields();">
+<input type='button' height='100px' width='200px' value='Asgard Beam Weapon' onClick="asgardBeam();">
 </div>
 
 <!--embarkation room-->
@@ -343,9 +351,8 @@ The communicator allows you to contact the ships ai even when off ship<br>
 
 
 <!--speaker box-->
-<div id="speakerPic2" style="text-align:left; text-align:middle; border:2px solid">
+<div id="speakerPic2" style="text-align:left; text-align:middle; border:2px solid"></div>
 
-</div>
 </div>
 </div>
 

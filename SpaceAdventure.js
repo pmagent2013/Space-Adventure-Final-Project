@@ -1,6 +1,6 @@
 //Character Creation Functions
 
-var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=true, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, pic="", mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1;
+var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, battle=false, pic="", weaponSelect="", weaponFired=false, mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1, shipHealth=100, wraithHealth=100;
 
 function getName()
 {
@@ -96,7 +96,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		textDisplay('Hello, I am this ships onboard AI');
 		advanceTalkCounter++;
 	}
-	/*
+	
 	else if(advanceTalkCounter===2)
 	{
 		characterPic(avatarPic);
@@ -154,29 +154,17 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	else if(advanceTalkCounter===11)
 	{
 		characterPic(avatarPic);
-		textDisplay('What if I have more questions?');
+		textDisplay('On the planet how do I beam back up to the ship?');
 		advanceTalkCounter++;
 	}
 	else if(advanceTalkCounter===12)
 	{
 		characterPic('ai');
-		textDisplay('If you are on the ship you can ask and I will do my best to answer. If you are on a planet, you will have to return to the ship or if you have a communicator you ask from anywhere.');
+		textDisplay('You will need to return to the location of where you where beamed down.');
 		advanceTalkCounter++;
 	}
+	
 	else if(advanceTalkCounter===13)
-	{
-		characterPic(avatarPic);
-		textDisplay('Last question for now, on the planet how do I beam back up to the ship?');
-		advanceTalkCounter++;
-	}
-	else if(advanceTalkCounter===14)
-	{
-		characterPic('ai');
-		textDisplay('You will need to return to the location of where you where beamed down. If you have a wrist teleporter you can beam up from anywhere on the planet.');
-		advanceTalkCounter++;
-	}
-	*/
-	else if(advanceTalkCounter===2)
 	{
 		characterPic('ai');
 		textDisplay('Good Luck');
@@ -1327,7 +1315,293 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		characterPic2('ai');
 		textDisplay2('They\'ve stopped firing, we\'re recieving a communication.');
 		advanceTalkCounter++;
+						
+	}
+	else if(advanceTalkCounter===909)
+	{
+		picSwitcher('hiveShip');
+		characterPic2('wraith');
+		textDisplay2('Prepare to die.');
+		advanceTalkCounter++;
+						
+	}
+	else if(advanceTalkCounter===910)
+	{
+		picSwitcher('shipControlRoom');
+		characterPic2('ai');
+		textDisplay2('Quick, activate the weapons system.');
+		advanceTalkCounter++;
+		battle=true;				
+	}
+	else if(advanceTalkCounter===916)
+	{
+		characterPic2('ai');
+		textDisplay2('There is no need to activate the weapon system at this time.');
+		advanceTalkCounter++;
+						
+	}
+	else if(advanceTalkCounter===917)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+								
+	}
+	else if(advanceTalkCounter===918)
+	{
+		characterPic2('ai');
+		textDisplay2('Ship Health: '+shipHealth +' '+' '+' '+ '    You have selected to divert power to the shields. Ship health increased by 40.');
+		advanceTalkCounter=923;
+						
+	}
+	else if(advanceTalkCounter===920)
+	{
+		characterPic2('ai');
+		textDisplay2('Weapon system engaged. Select weapon to engage.');
+						
+	}
+	else if(advanceTalkCounter===922)
+	{
+		characterPic2('ai');
+		textDisplay2('Ship Health: '+shipHealth +' '+' '+' '+'      You have selected to engage the: '+weaponSelect+'. Engaging now.');
+		advanceTalkCounter++;
+						
+	}
+	else if(advanceTalkCounter===923)
+	{
+		if(wraithHealth>0)
+		{
+		picSwitcher('hiveFiring');
+		characterPic2('ai');
+		textDisplay2('The wraith ship has fired again. Our ship has suffered 25 damage.');
+		shipHealth-=25;	
+		advanceTalkCounter=920;
+		weaponFired=false;
+		gameOver();
+		}
+		else
+		{
+		 advanceTalkCounter=930;
+		 advanceTalk();
+		}
+	}
+	else if(advanceTalkCounter===925)
+	{
+		characterPic2('ai');
+		textDisplay2('Cannot fire again yet. Click next to see what the Wraith do.');
+		advanceTalkCounter=923;
+		
+	}
+	else if(advanceTalkCounter===930)
+	{
+		characterPic2('ai');
+		textDisplay2('The Wraith ship has been destroyed! The hyperdrive is back online, when your ready we can finally go to Earth.');
+		advanceTalkCounter++;
+		buttonWeaponSystem_ControlRoom.style.display='none'
+		buttonStart_ControlRoom.style.display='block'
+		
+	}
+	else if(advanceTalkCounter===931)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('');
+		advanceTalkCounter++;
+		buttonWeaponSystem_ControlRoom.style.display='none'
+		buttonStart_ControlRoom.style.display='block'
+		
+	}
+	
+	
+	else if(advanceTalkCounter===935)
+	{
+		characterPic2('ai');
+		textDisplay2('The ship has arrived at earth, I will open a communication channel with them.');
+		advanceTalkCounter+=2;
+		buttonWeaponSystem_ControlRoom.style.display='none'
+		buttonStart_ControlRoom.style.display='none'
+		picSwitcher('earth');
+		
+	}
+	else if(advanceTalkCounter===937)
+	{
+		characterPic2('hammond');
+		textDisplay2('Hello I am General Hammond, our sensors tell us that this is an Earth vessel from the exploaritory expedition. We would like to debrief your crew as soon as possible, are any more ships returning.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===938)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('General Hammond Sir, I am the only crew member left aboard this ship, and no other ships are coming, they have all been destroyed.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===939)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('They were destroyed by a powerful enemy called the Wraith. The Wraith are on their way here right now, you need to deploy any forces you have.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===940)
+	{
+		characterPic2('hammond');
+		textDisplay2('We only have a few ships left but we\'ll put up one hell of a fight.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===941)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Good the Wraith will probably be here soon.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===942)
+	{
+		picSwitcher('wraithFleet');
+		characterPic2('ai');
+		textDisplay2('Our sensors have detected the Wraith fleet emerging from hyperspace.');
+		advanceTalkCounter+=2;
+		
+	}
+	else if(advanceTalkCounter===944)
+	{
+		characterPic2('hammond');
+		textDisplay2('Our ships are ready for battle. Good luck everyone');
+		picSwitcher('earthFleet');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===945)
+	{
+		
+		picSwitcher('battle1');
+		characterPic2('caldwell');
+		textDisplay2('Engaging hostile vessels. Firing missiles.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===946)
+	{
+		
+		picSwitcher('battle2');
+		characterPic2('caldwell');
+		textDisplay2('Minimal effect. Switch to beam weapons.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===947)
+	{
+		
+		picSwitcher('battle3');
+		characterPic2('ellis');
+		textDisplay2('Firing beam weapons, direct hit.');
+		advanceTalkCounter++;
+		
+	}else if(advanceTalkCounter===948)
+	{
+		
+		picSwitcher('battle4');
+		characterPic2('ellis');
+		textDisplay2('That\'s a kill!.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===949)
+	{
+		
+		picSwitcher('battle5');
+		characterPic2('caldwell');
+		textDisplay2('Three hives firing on us. Shields are failing. We\'re not going to make it!');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===950)
+	{
+		characterPic2('hammond');
+		textDisplay2('Their forces are too many, we\'ve lost contact with half our fleet. Their ships are attacking the planet!');
+		picSwitcher('wraithEarth');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===951)
+	{
+		characterPic2('ai');
+		textDisplay2('I\'m detecting another fleet entering orbit');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===952)
+	{
+		characterPic2('ai');
+		textDisplay2('It\'s the Asgard');
+		advanceTalkCounter++;
+		picSwitcher('asgardFleet');
+		
+	}
+	else if(advanceTalkCounter===953)
+	{
+		characterPic2('thor');
+		textDisplay2('Hello friend, the Asgard high council approved a mission to protect Earth.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===954)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thor! It\'s great to see you. I don\'t think we would\'ve lasted much longer.');
+		advanceTalkCounter++;
+		
+	}
+	else if(advanceTalkCounter===955)
+	{
+		characterPic2('thor');
+		textDisplay2('The enemy fleet is in full retreat, I seriously doubt they will return.');
+		advanceTalkCounter++;
+		picSwitcher('asgardMeeting');
+		
+	}
+	else if(advanceTalkCounter===956)
+	{
+		characterPic2('thor');
+		textDisplay2('General Hammond, you owe the survival of your planet to this brave solider.');
+		advanceTalkCounter++;
 				
+	}
+	else if(advanceTalkCounter===957)
+	{
+		characterPic2('thor');
+		textDisplay2('He will be greatly rewarded for his hardwork.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===958)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Thank you sir, glad to have helped.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===959)
+	{
+		characterPic2(avatarPic);
+		textDisplay2('Congrationaltions you have won! Thanks for playing');
+		picSwitcher('victory');
+				
+	}
+	else if(advanceTalkCounter===980)
+	{
+		characterPic2('ai');
+		textDisplay2('That weapon system is not installed on the ship.');
+		
+				
+	}
+	else if(advanceTalkCounter===1000)
+	{
+		characterPic2('wraith');
+		textDisplay2('Your ship has been destroyed. You Lose. To try again, refresh the page.');
+		advanceTalkCounter++;
+		
 	}
 	
 }
@@ -1742,6 +2016,12 @@ function hyperdrive()
   advanceTalkCounter=906;
   advanceTalk();
  }
+ else if(powerCore===true && newhyperdrive===true && airFilter===true && hyperdriveCounter===3 && battle===true)
+ {
+  hyperdriveCounter++;
+  advanceTalkCounter=935;
+  advanceTalk();
+ }
  else
  {
   advanceTalkCounter=714;
@@ -1749,4 +2029,110 @@ function hyperdrive()
  }
  
 }
+function weaponSystem()
+{
+ if(battle===true)
+ {
+ buttonStart_ControlRoom.style.display='none'
+ buttonWeaponSystem_ControlRoom.style.display='block'
+ advanceTalkCounter=920;
+ advanceTalk();
+ }
+ else
+ {
+  advanceTalkCounter=916;
+ advanceTalk();
+ }
+}
+
+function railgun()
+{
+ if(weaponFired===false)
+ {
+ wraithHealth-=20;
+ picSwitcher('shipRailgun');
+ weaponSelect="railgun";
+ advanceTalkCounter=922;
+ advanceTalk();
+ weaponFired=true;
+ gameOver();
+ }
+ else
+ {
+ advanceTalkCounter=925;
+ advanceTalk();
+ }
+}
+function missles()
+{
+ if(weaponFired===false)
+ {
+ wraithHealth-=20;
+ picSwitcher('shipMissiles');
+ weaponSelect="missiles";
+ advanceTalkCounter=922;
+ advanceTalk();
+ weaponFired=true;
+ gameOver();
+ }
+ else
+ {
+ advanceTalkCounter=925;
+ advanceTalk();
+ }
+}
+function asgardBeam()
+{
+ if(weaponFired===false)
+ {
+ if(asgardWeapons===true)
+ {
+ wraithHealth-=80;
+ picSwitcher('shipAsgardBeam');
+ weaponSelect="asgard beam weapon";
+ advanceTalkCounter=922;
+ advanceTalk();
+ weaponFired=true;
+ gameOver();
+ }
+ else
+ {
+ advanceTalkCounter=980;
+ advanceTalk();
+ }
+ }
+ else
+ {
+ advanceTalkCounter=925;
+ advanceTalk();
+ }
+}
+function shields()
+{
+ shipHealth+=40;
+ picSwitcher('shipShield');
+ advanceTalkCounter=918;
+ advanceTalk();
+ weaponFired=true;
+}
+
+function gameOver()
+{
+ if(shipHealth<=0)
+ {
+  picSwitcher('shipDestroyed');
+  buttonWeaponSystem_ControlRoom.style.display='none'
+  advanceTalkCounter=1000;
+  advanceTalk();
+ 
+ }
+ else if(wraithHealth<=0)
+ {
+  picSwitcher('hiveDestroyed');
+  advanceTalkCounter=930;
+  advanceTalk();
+  
+ }
+}
+
 
