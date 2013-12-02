@@ -1,12 +1,7 @@
 //Character Creation Functions
 
-var name="", gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, battle=false, pic="", weaponSelect="", weaponFired=false, mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1, shipHealth=100, wraithHealth=100;
-
-function getName()
-{
- name=document.getElementById('nameBox').value;
-}
-
+//global variables required for the game
+var gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, battle=false, pic="", weaponSelect="", weaponFired=false, mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1, shipHealth=100, wraithHealth=100;
 
 function getTrait(item)
 {
@@ -24,15 +19,8 @@ function getTrait(item)
  }
 }
 
-
-function getPic(picID)
-{
- pic=picID;
-}
-
-
 //main functions
-
+//draws the inital screens of the game
 function startGame()
 {
   startScreen.style.display='none'
@@ -46,7 +34,7 @@ function picSwitcher(imgName) //switches main image
     document.getElementById('imgMain2').innerHTML = "<img src='images/"+imgName+".jpg' height='450px' width='90%'>";
 	
 }
-
+//these are the possible characters to be selected
 function avatar(ava) //selects the avatar of the user
 {
   if(ava==='ronan')
@@ -75,6 +63,7 @@ function textDisplay(text) // text that will be spoken
   document.getElementById('speakerPic').innerHTML = document.getElementById('speakerPic').innerHTML + text + '<input type="button" value="Next" onClick="advanceTalk();">';
 }
 
+//these functions had to be duplicated due to the need to redraw the divs and was unable to reuse the same div
 function characterPic2(avatarIMG) //avatar of who is speaking
 {
   
@@ -86,6 +75,8 @@ function textDisplay2(text) // text that will be spoken
     document.getElementById('speakerPic2').innerHTML = document.getElementById('speakerPic2').innerHTML + text + '<input type="button" value="Next" onClick="advanceTalk();">';
 }
 
+//This is the entire dialogue contained in the game. Some will be said no matter what, others will be said based on player choices.
+//Large gaps in numbers is because of deleted dialogue or functionality that was not implemented for various reasons.
 function advanceTalk(pic, text) //selects the avatar of who speaking and the dialogue that will be said.
 {
 	//ai, \'Hello, I am this ships onboard AI\'
@@ -172,6 +163,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		gameShip(); //start game on the ship
 		
 	}
+	//number jump due to deleted dialogue
 	else if(advanceTalkCounter===498)
 	{
 		characterPic2(avatarPic);
@@ -179,6 +171,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		advanceTalkCounter++;
 				
 	}
+	//ship exploration dialogue
 	else if(advanceTalkCounter===500)
 	{
 		characterPic2(avatarPic);
@@ -306,6 +299,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		advanceTalkCounter++;
 		
 	}
+	//dakara dialogue
 	else if(advanceTalkCounter===600)
 	{
 		characterPic2(avatarPic);
@@ -554,6 +548,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		advanceTalkCounter++;
 				
 	}
+	//transport back to ship and orilla dialogue
 	else if(advanceTalkCounter===700)
 	{
 		characterPic2('ai');
@@ -955,6 +950,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		advanceTalkCounter++;
 				
 	}
+	//transport back to ship and abydos dialogue
 	else if(advanceTalkCounter===800)
 	{
 		characterPic2('ai');
@@ -1123,11 +1119,11 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		characterPic2(avatarPic);
 		if(artifact===true)
 		{
-		textDisplay2('I found an artifact in the ruins, will this work?.');
+			textDisplay2('I found an artifact in the ruins, will this work?.');
 		}
 		else
 		{
-		textDisplay2('I will go try and find one.');
+			textDisplay2('I will go try and find one.');
 		}
 		advanceTalkCounter++;
 				
@@ -1137,14 +1133,14 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		
 		if(artifact===true)
 		{
-		characterPic2('kasuf');
-		textDisplay2('That will go great in my collection. I will tell you what I know.');
-		advanceTalkCounter++;
+		 characterPic2('kasuf');
+		 textDisplay2('That will go great in my collection. I will tell you what I know.');
+		 advanceTalkCounter++;
 		}
 		else
 		{
-		characterPic2(avatarPic);
-		textDisplay2('');
+		 characterPic2(avatarPic);
+		 textDisplay2('');
 		}
 		
 				
@@ -1261,6 +1257,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		advanceTalkCounter++;
 				
 	}
+	//return to ship and battle dialogue
 	else if(advanceTalkCounter===900)
 	{
 		characterPic2('ai');
@@ -1370,13 +1367,13 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	{
 		if(wraithHealth>0)
 		{
-		picSwitcher('hiveFiring');
-		characterPic2('ai');
-		textDisplay2('The wraith ship has fired again. Our ship has suffered 25 damage.');
-		shipHealth-=25;	
-		advanceTalkCounter=920;
-		weaponFired=false;
-		gameOver();
+		 picSwitcher('hiveFiring');
+		 characterPic2('ai');
+		 textDisplay2('The wraith ship has fired again. Our ship has suffered 25 damage.');
+		 shipHealth-=25;	
+		 advanceTalkCounter=920;
+		 weaponFired=false;
+		 gameOver();
 		}
 		else
 		{
@@ -1410,7 +1407,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		
 	}
 	
-	
+	//end game dialogue
 	else if(advanceTalkCounter===935)
 	{
 		characterPic2('ai');
@@ -1614,7 +1611,7 @@ function gameShip()
 	
 	
 }
-
+//depending on location will determine which div element is visible. This will display the row of buttons that correspond to the location.
 function explore(location)
 {
  if (location==="stasisChamber")
@@ -1679,6 +1676,7 @@ function explore(location)
   }
 }
 
+//Takes the location and will if there is an item present will return the option to pick it up. if it has already been picked up it will display as such.
 function search(location)
 {
  if (location==="stasisChamber")
@@ -1691,16 +1689,16 @@ function search(location)
  {
     if(medicine===true)
 	{
-	advanceTalkCounter=650;
-    advanceTalk();
+	 advanceTalkCounter=650;
+     advanceTalk();
 	}
 	else
 	{
-	buttonStart_EmbarkationRoom.style.display='none'
-    advanceTalkCounter=514;
-    advanceTalk();
-	medicine=true;
-	buttonSearch_EmbarkationRoom.style.display='block'
+	 buttonStart_EmbarkationRoom.style.display='none'
+     advanceTalkCounter=514;
+     advanceTalk();
+	 medicine=true;
+	 buttonSearch_EmbarkationRoom.style.display='block'
 	}
  }
  if (location==="controlRoom")
@@ -1714,16 +1712,16 @@ function search(location)
  {
 	if(goldChest===true)
 	{
-	advanceTalkCounter=650;
-    advanceTalk();
+	 advanceTalkCounter=650;
+     advanceTalk();
 	}
 	else
 	{
-	buttonStart_DakaraVillage.style.display='none'
-	advanceTalkCounter=652;
-    advanceTalk();
-    buttonSearch_DakaraVillage.style.display='block'
-	goldChest=true;
+	 buttonStart_DakaraVillage.style.display='none'
+	 advanceTalkCounter=652;
+     advanceTalk();
+     buttonSearch_DakaraVillage.style.display='block'
+	 goldChest=true;
 	}
  }
  if (location==="dakaraTemple")
@@ -1736,16 +1734,16 @@ function search(location)
  {
 	if(goldChest2===true)
 	{
-	advanceTalkCounter=650;
-    advanceTalk();
+	 advanceTalkCounter=650;
+     advanceTalk();
 	}
 	else
 	{
-	buttonStart_DakaraRuins.style.display='none'
-	advanceTalkCounter=652;
-    advanceTalk();
-    buttonSearch_DakaraRuins.style.display='block'
-	goldChest2=true;
+	 buttonStart_DakaraRuins.style.display='none'
+	 advanceTalkCounter=652;
+     advanceTalk();
+     buttonSearch_DakaraRuins.style.display='block'
+	 goldChest2=true;
 	}
  }
  if (location==="orillaCity")
@@ -1771,16 +1769,16 @@ if (location==="abydosCity")
  {
 	if(airFilter===true)
 	{
-	advanceTalkCounter=650;
-    advanceTalk();
+	 advanceTalkCounter=650;
+     advanceTalk();
 	}
 	else
 	{
-	buttonStart_AbydosCity.style.display='none'
-	advanceTalkCounter=852;
-    advanceTalk();
-    buttonSearch_AbydosCity.style.display='block'
-	airFilter=true;
+	 buttonStart_AbydosCity.style.display='none'
+	 advanceTalkCounter=852;
+     advanceTalk();
+     buttonSearch_AbydosCity.style.display='block'
+	 airFilter=true;
 	}
  }
  if (location==="abydosPyramid")
@@ -1793,21 +1791,21 @@ if (location==="abydosCity")
  {
 	if(artifact===true)
 	{
-	advanceTalkCounter=650;
-    advanceTalk();
+	 advanceTalkCounter=650;
+     advanceTalk();
 	}
 	else
 	{
-	buttonStart_AbydosRelic.style.display='none'
-	advanceTalkCounter=854;
-    advanceTalk();
-    buttonSearch_AbydosRelic.style.display='block'
-	artifact=true;
+	 buttonStart_AbydosRelic.style.display='none'
+	 advanceTalkCounter=854;
+     advanceTalk();
+     buttonSearch_AbydosRelic.style.display='block'
+	 artifact=true;
 	}
  } 
  
 }
-
+//based on location it will start a conversation with the person in the location. If the dialogue is too long it will not allow player to accidently restart dialogue
 function talk(location)
 {
 if(location==="stasisChamber")
@@ -1850,26 +1848,26 @@ if(location==="stasisChamber")
   {
 	if(councilTalk===false)
 	{
-	advanceTalkCounter=727;
-	advanceTalk();
+	 advanceTalkCounter=727;
+	 advanceTalk();
 	}
 	else
 	{
-	advanceTalkCounter=748;
-	advanceTalk();
+	 advanceTalkCounter=748;
+	 advanceTalk();
 	}
   }
   if(location==="orillaShipyard")
   {
 	if(councilApprove===false)
 	{
-	advanceTalkCounter=751;
-	advanceTalk();
+	 advanceTalkCounter=751;
+	 advanceTalk();
 	}
 	else
 	{
-	advanceTalkCounter=754;
-	advanceTalk();
+	 advanceTalkCounter=754;
+	 advanceTalk();
 	}
   }
   if(location==="abydosPyramid")
@@ -1889,7 +1887,7 @@ if(location==="stasisChamber")
   }
   
 }
-
+//allows the player to transport off the ship and back on the ship if the location is right.
 function teleport(location)
 {
  if(location==="stasisChamber")
@@ -1901,24 +1899,24 @@ function teleport(location)
   {
    if(hyperdriveCounter===0)
     {
-    advanceTalkCounter=518;
-	advanceTalk();
-  	buttonStart_EmbarkationRoom.style.display='none'
-	buttonTeleport_EmbarkationRoom.style.display='block'
+     advanceTalkCounter=518;
+	 advanceTalk();
+  	 buttonStart_EmbarkationRoom.style.display='none'
+	 buttonTeleport_EmbarkationRoom.style.display='block'
 	}
 	if(hyperdriveCounter===1)
     {
-    advanceTalkCounter=718;
-	advanceTalk();
-  	buttonStart_EmbarkationRoom.style.display='none'
-	buttonTeleport_EmbarkationRoom2.style.display='block'
+     advanceTalkCounter=718;
+	 advanceTalk();
+  	 buttonStart_EmbarkationRoom.style.display='none'
+	 buttonTeleport_EmbarkationRoom2.style.display='block'
 	}
 	if(hyperdriveCounter===2)
     {
-    advanceTalkCounter=898;
-	advanceTalk();
-  	buttonStart_EmbarkationRoom.style.display='none'
-	buttonTeleport_EmbarkationRoom3.style.display='block'
+     advanceTalkCounter=898;
+	 advanceTalk();
+  	 buttonStart_EmbarkationRoom.style.display='none'
+	 buttonTeleport_EmbarkationRoom3.style.display='block'
 	}
   }
   if(location==="controlRoom")
@@ -1934,8 +1932,8 @@ function teleport(location)
 	buttonTeleport_DakaraVillage.style.display='block'
 	if(powerCore===true)
 	{
-	advanceTalkCounter=700;
-	advanceTalk();
+	 advanceTalkCounter=700;
+	 advanceTalk();
 	}
   }
   if(location==="dakaraRuins")
@@ -1956,8 +1954,8 @@ function teleport(location)
 	buttonTeleport_OrillaCity.style.display='block'
 	if(newhyperdrive===true)
 	{
-	advanceTalkCounter=800;
-	advanceTalk();
+	 advanceTalkCounter=800;
+	 advanceTalk();
 	}
   }
   if(location==="orillaCouncil")
@@ -1978,8 +1976,8 @@ function teleport(location)
 	buttonTeleport_AbydosPyramid.style.display='block'
 	if(airFilter===true)
 	{
-	advanceTalkCounter=900;
-	advanceTalk();
+	 advanceTalkCounter=900;
+	 advanceTalk();
 	}
   }
   if(location==="abydosCity")
@@ -1994,7 +1992,7 @@ function teleport(location)
   }
 }
 
-
+//if the player has accomplished the required goals it will allow them to activate the ships hyperdrive and travel to the next stage of the game.
 function hyperdrive()
 {
  if(powerCore===true && newhyperdrive===false && airFilter===false && hyperdriveCounter===0)
@@ -2029,19 +2027,22 @@ function hyperdrive()
  }
  
 }
+//when the battle begins this will allow the player to control the weapon system and choose what to fire/use. 
+//After the player goes, the wraith ship will react
+//MUST IMPLEMENT RANDOM CHOICE OF WHAT WRAITH SHIP DOES. DON'T FORGET TO DO!!!!!!!!!!!!!!!!!!!!!!
 function weaponSystem()
 {
  if(battle===true)
  {
- buttonStart_ControlRoom.style.display='none'
- buttonWeaponSystem_ControlRoom.style.display='block'
- advanceTalkCounter=920;
- advanceTalk();
+  buttonStart_ControlRoom.style.display='none'
+  buttonWeaponSystem_ControlRoom.style.display='block'
+  advanceTalkCounter=920;
+  advanceTalk();
  }
  else
  {
   advanceTalkCounter=916;
- advanceTalk();
+  advanceTalk();
  }
 }
 
@@ -2049,65 +2050,65 @@ function railgun()
 {
  if(weaponFired===false)
  {
- wraithHealth-=20;
- picSwitcher('shipRailgun');
- weaponSelect="railgun";
- advanceTalkCounter=922;
- advanceTalk();
- weaponFired=true;
- gameOver();
+  wraithHealth-=20;
+  picSwitcher('shipRailgun');
+  weaponSelect="railgun";
+  advanceTalkCounter=922;
+  advanceTalk();
+  weaponFired=true;
+  gameOver();
  }
  else
  {
- advanceTalkCounter=925;
- advanceTalk();
+  advanceTalkCounter=925;
+  advanceTalk();
  }
 }
 function missles()
 {
  if(weaponFired===false)
  {
- wraithHealth-=20;
- picSwitcher('shipMissiles');
- weaponSelect="missiles";
- advanceTalkCounter=922;
- advanceTalk();
- weaponFired=true;
- gameOver();
+  wraithHealth-=20;
+  picSwitcher('shipMissiles');
+  weaponSelect="missiles";
+  advanceTalkCounter=922;
+  advanceTalk();
+  weaponFired=true;
+  gameOver();
  }
  else
  {
- advanceTalkCounter=925;
- advanceTalk();
+  advanceTalkCounter=925;
+  advanceTalk();
  }
 }
-function asgardBeam()
+function asgardBeam() //Can only be used if player recieved the technology on Orilla. 
 {
  if(weaponFired===false)
  {
  if(asgardWeapons===true)
  {
- wraithHealth-=80;
- picSwitcher('shipAsgardBeam');
- weaponSelect="asgard beam weapon";
- advanceTalkCounter=922;
- advanceTalk();
- weaponFired=true;
- gameOver();
+  wraithHealth-=80;
+  picSwitcher('shipAsgardBeam');
+  weaponSelect="asgard beam weapon";
+  advanceTalkCounter=922;
+  advanceTalk();
+  weaponFired=true;
+  gameOver();
  }
  else
  {
- advanceTalkCounter=980;
- advanceTalk();
+  advanceTalkCounter=980;
+  advanceTalk();
  }
  }
  else
  {
- advanceTalkCounter=925;
- advanceTalk();
+  advanceTalkCounter=925;
+  advanceTalk();
  }
 }
-function shields()
+function shields() //restores ship health
 {
  shipHealth+=40;
  picSwitcher('shipShield');
@@ -2116,7 +2117,7 @@ function shields()
  weaponFired=true;
 }
 
-function gameOver()
+function gameOver() //determine if the game is over after each turn of the battle. Either the player loses and game ends, or player wins and concluding dialogue and pictures appear.
 {
  if(shipHealth<=0)
  {
