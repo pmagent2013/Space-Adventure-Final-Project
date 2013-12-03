@@ -1,23 +1,8 @@
 //Character Creation Functions
 
 //global variables required for the game
-var gun=false, teleporter=false, comm=false, medicine=false, powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, battle=false, pic="", weaponSelect="", weaponFired=false, mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1, shipHealth=100, wraithHealth=100;
+var medicine=false, name="", powerCore=false, newhyperdrive=false, airFilter=false, goldChest=false, goldChest2=false, artifact=false, councilTalk=false, councilApprove=false, asgardWeapons=false, battle=false, pic="", weaponSelect="", weaponFired=false, mainPic="shipOuter", avatarPic="", hyperdriveCounter=0, advanceTalkCounter=1, shipHealth=100, wraithHealth=100;
 
-function getTrait(item)
-{
- if(item==="gun")
- {
-  gun=true;
- }
- else if(item==="teleporter")
- {
-  teleporter=true;
- }
- else
- {
-  comm=true;
- }
-}
 
 //main functions
 //draws the inital screens of the game
@@ -45,10 +30,15 @@ function avatar(ava) //selects the avatar of the user
   {
 	avatarPic="john";
   }
+  else if(ava==='carter')
+  {
+	avatarPic="carter";
+  }
   else if(ava==='mckay')
   {
 	avatarPic="mckay";
   }
+  
 }
 
 function characterPic(avatarIMG) //avatar of who is speaking
@@ -1561,25 +1551,49 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	else if(advanceTalkCounter===956)
 	{
 		characterPic2('thor');
-		textDisplay2('General Hammond, you owe the survival of your planet to this brave solider.');
+		textDisplay2('General Hammond, you owe the survival of your planet to...');
 		advanceTalkCounter++;
 				
 	}
 	else if(advanceTalkCounter===957)
 	{
 		characterPic2('thor');
-		textDisplay2('He will be greatly rewarded for his hardwork.');
+		textDisplay2('I just realized I never got your name.');
 		advanceTalkCounter++;
 				
 	}
 	else if(advanceTalkCounter===958)
+	{
+		characterPic2('thor');
+		textDisplay2('What\'s your name?');
+		advanceTalkCounter++;
+		nameDiv.style.display='block'
+		nameBox.style.display='block'
+		nameButton.style.display='block'
+		getName();		
+	}
+  else if(advanceTalkCounter===959)
+	{
+		characterPic2('thor');
+		textDisplay2('Well '+name+', thank you once again, I hope we see each other again.');
+		advanceTalkCounter++;
+		nameDiv.style.display='none'		
+	}
+	else if(advanceTalkCounter===960)
+	{
+		characterPic2('hammond');
+		textDisplay2(name+' you will be greatly rewarded.');
+		advanceTalkCounter++;
+				
+	}
+	else if(advanceTalkCounter===961)
 	{
 		characterPic2(avatarPic);
 		textDisplay2('Thank you sir, glad to have helped.');
 		advanceTalkCounter++;
 				
 	}
-	else if(advanceTalkCounter===959)
+	else if(advanceTalkCounter===962)
 	{
 		characterPic2(avatarPic);
 		textDisplay2('Congrationaltions you have won! Thanks for playing');
@@ -2134,6 +2148,11 @@ function gameOver() //determine if the game is over after each turn of the battl
   advanceTalk();
   
  }
+}
+
+function getName()
+{
+ name=document.getElementById('nameBox').value;
 }
 
 

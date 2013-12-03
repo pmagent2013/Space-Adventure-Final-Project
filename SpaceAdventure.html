@@ -19,6 +19,7 @@
 	</div>
 		<div style="text-align:center">
 		<input type='button' height='100px' width='80px' value='Start Game' onclick="this.style.display='none', startGame();">
+		<input type='button' height='100px' width='80px' value='Instructions' onclick="window.open('help.html');">
 		</div>
 	</div>
 	</div>
@@ -34,37 +35,14 @@
 	<img src="images/ronan.jpg" height="300px" width="200px">
 	<img src="images/john.jpg" height="300px" width="200px">
 	<img src="images/mckay.jpg" height="300px" width="200px">
+	<img src="images/carter.jpg" height="300px" width="200px">
 	<br>
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', characterCreate2.style.display='block', avatar('ronan');">
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', characterCreate2.style.display='block', avatar('john');">
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', characterCreate2.style.display='block', avatar('mckay');">
+	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('ronan'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('john'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('mckay'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('carter'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
 	</div>
 </div>
-
-
-
-
-
-<!--CHARACTER CREATION SCREEN 2-->
-<div id="characterCreate2" style="display: none">
-	<div style="text-align:center" id="avatarSelect">
-		<h1>Select Your Characters Starting Item</h1>
-		<p style="text-align:left">
-		The gun allows you to kill those who oppose you<br>
-		The teleporter allows you to teleport up to the ship no matter your location on a planet<br>
-		The communicator allows you to contact the ships ai even when off ship<br>
-		</p>
-		<img src="images/gun.jpg" height="200px" width="200px">
-		<img src="images/teleporter.jpg" height="200px" width="200px">
-		<img src="images/communicator.jpg" height="200px" width="200px">
-		<br>
-		<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', gameBegin.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('gun');">
-		<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', gameBegin.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('teleporter');">
-		<input type='button' style="width:200px" value='Select' onclick="characterCreate2.style.display='none', gameBegin.style.display='block', characterPic(avatarPic), textDisplay('What happened.... where am I?'); getTrait('comm');">
-	</div>
-</div>
-
-
 
 
 
@@ -348,7 +326,11 @@
 	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosRelic.style.display='none', buttonStart_AbydosRelic.style.display='block'">
 </div>
 
-
+<div id="nameDiv" style="text-align:center" style="display: none">
+  <input type="text" id="nameBox" size="16" value="" style="display: none"/>
+  <input type="button" id="nameButton" onclick="getName();" value="Enter Name" style="display: none" height='100px' width='200px'>
+	</button>
+</div>
 <!--speaker box-->
 <div id="speakerPic2" style="text-align:left; text-align:middle; border:2px solid"></div>
 
