@@ -50,7 +50,7 @@ function characterPic(avatarIMG) //avatar of who is speaking
 function textDisplay(text) // text that will be spoken
 {
   ai='ai'
-  document.getElementById('speakerPic').innerHTML = document.getElementById('speakerPic').innerHTML + text + '<input type="button" value="Next" onClick="advanceTalk();">';
+  document.getElementById('speakerPic').innerHTML = document.getElementById('speakerPic').innerHTML + text + '<input type="button" value="Next" id="button" onClick="advanceTalk();">';
 }
 
 //these functions had to be duplicated due to the need to redraw the divs and was unable to reuse the same div
@@ -62,7 +62,7 @@ function characterPic2(avatarIMG) //avatar of who is speaking
 
 function textDisplay2(text) // text that will be spoken
 {
-    document.getElementById('speakerPic2').innerHTML = document.getElementById('speakerPic2').innerHTML + text + '<input type="button" value="Next" onClick="advanceTalk();">';
+    document.getElementById('speakerPic2').innerHTML = document.getElementById('speakerPic2').innerHTML + text + '<input type="button" value="Next" id="button" onClick="advanceTalk();">';
 }
 
 //This is the entire dialogue contained in the game. Some will be said no matter what, others will be said based on player choices.
@@ -469,9 +469,17 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	}
 	else if(advanceTalkCounter===630)
 	{
+		if(medicine===true)
+		{
 		characterPic2(avatarPic);
-		textDisplay2('I have medicine to trade in exchange for a power core. Teal\'c said he approved the trade.');
+		textDisplay2('I have medicine I\'d be willing to trade.');
 		advanceTalkCounter++;
+		}
+		else
+		{
+		characterPic2(avatarPic);
+		textDisplay2('Perhaps there is medicine on my ship.');
+		}
 		
 	}
 	else if(advanceTalkCounter===631)
@@ -864,7 +872,7 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		textDisplay2('Yes i have the money to pay for it');
 		advanceTalkCounter++;
 		}
-		else if(goldChest && goldChest2 === false)
+		else
 		{
 		textDisplay2('Shit! Well I guess im trapped here, what\'s good to eat?');
 		}
@@ -1357,6 +1365,9 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 	{
 		if(wraithHealth>0)
 		{
+		 var randomnumber=Math.floor(Math.random()*11) 
+		 if(randomnumber<=6) //adjust this number to increase/decrease difficulty of the battle. Higher the number the easier it will be
+		 {
 		 picSwitcher('hiveFiring');
 		 characterPic2('ai');
 		 textDisplay2('The wraith ship has fired again. Our ship has suffered 25 damage.');
@@ -1364,6 +1375,17 @@ function advanceTalk(pic, text) //selects the avatar of who speaking and the dia
 		 advanceTalkCounter=920;
 		 weaponFired=false;
 		 gameOver();
+		 }
+		 else
+		 {
+		 picSwitcher('hiveRegenerating');
+		 characterPic2('ai');
+		 textDisplay2('The wraith ship is diverting power to hull regeneration, it\'s health has gone up.');
+		 wraithHealth+=25;	
+		 advanceTalkCounter=920;
+		 weaponFired=false;
+		 gameOver();
+		 }
 		}
 		else
 		{
@@ -2102,7 +2124,7 @@ function asgardBeam() //Can only be used if player recieved the technology on Or
  {
  if(asgardWeapons===true)
  {
-  wraithHealth-=80;
+  wraithHealth-=60;
   picSwitcher('shipAsgardBeam');
   weaponSelect="asgard beam weapon";
   advanceTalkCounter=922;

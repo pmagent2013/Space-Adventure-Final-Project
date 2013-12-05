@@ -1,0 +1,22 @@
+<html>
+<head>
+<style>
+body {color:red;}
+h1 {color:#DAA520;}
+#button{
+background-color: #DAA520;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #FFFAF0;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+     border:none;
+}
+</style>
+</head>
+<body>
+</body>
+</html>

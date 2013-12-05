@@ -6,6 +6,7 @@
 
    <title>Space Adventure</title>
    <script type = "text/javascript" src="SpaceAdventure.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body onload="('picSwitcher(shipOuter2)')">
@@ -18,8 +19,8 @@
 	<img id="imgMain" src="images/shipOuter2.jpg" height="450px" width="90%">
 	</div>
 		<div style="text-align:center">
-		<input type='button' height='100px' width='80px' value='Start Game' onclick="this.style.display='none', startGame();">
-		<input type='button' height='100px' width='80px' value='Instructions' onclick="window.open('help.html');">
+		<input type='button' height='100px' width='80px' value='Start Game' id='button' onclick="this.style.display='none', startGame();">
+		<input type='button' height='100px' width='80px' value='Instructions' id='button' onclick="window.open('help.html');">
 		</div>
 	</div>
 	</div>
@@ -37,10 +38,10 @@
 	<img src="images/mckay.jpg" height="300px" width="200px">
 	<img src="images/carter.jpg" height="300px" width="200px">
 	<br>
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('ronan'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('john'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('mckay'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
-	<input type='button' style="width:200px" value='Select' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('carter'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' id='button' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('ronan'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' id='button' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('john'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' id='button' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('mckay'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
+	<input type='button' style="width:200px" value='Select' id='button' onclick="characterCreate.style.display='none', gameBegin.style.display='block', avatar('carter'), characterPic(avatarPic), textDisplay('What happened.... where am I?');">
 	</div>
 </div>
 
@@ -51,7 +52,7 @@
 	<div style="text-align:center" id="avatarSelect">
 	<img id="imgMain" src="images/start.jpg" height="450px" width="90%">
 	<br>
-	<div id="speakerPic" style="text-align:left; text-align:middle; border:2px solid" ></div>
+	<div id="speakerPic" style="text-align:left; text-align:middle; border:2px inset #DAA520" ></div>
 	</div>
 </div>
 
@@ -70,133 +71,133 @@
 
 <!--stasis chamber-->
 <div id='buttonStart_Stasis'>
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('stasisChamber');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('stasisChamber');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('stasisChamber');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('stasisChamber');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('stasisChamber');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('stasisChamber');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('stasisChamber');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('stasisChamber');">
 </div>
 
 <div id='buttonExplore_Stasis' style="display: none">
-	<input type='button' height='100px' width='200px' value='Control Room' onClick="picSwitcher('shipControlRoom'); buttonExplore_Stasis.style.display='none', buttonStart_ControlRoom.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Embarkation Room' onClick="picSwitcher('shipMain'); buttonExplore_Stasis.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Control Room' id='button' onClick="picSwitcher('shipControlRoom'); buttonExplore_Stasis.style.display='none', buttonStart_ControlRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Embarkation Room' id='button' onClick="picSwitcher('shipMain'); buttonExplore_Stasis.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
 </div>
 
 
 
 <!--control room-->
 <div id='buttonStart_ControlRoom' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('controlRoom');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('controlRoom');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('controlRoom');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('controlRoom');">
-	<input type='button' height='100px' width='200px' value='Hyperdrive' onClick="hyperdrive();">
-	<input type='button' height='100px' width='200px' value='Weapon System' onClick="weaponSystem();">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('controlRoom');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('controlRoom');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('controlRoom');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('controlRoom');">
+	<input type='button' height='100px' width='200px' value='Hyperdrive' id='button' onClick="hyperdrive();">
+	<input type='button' height='100px' width='200px' value='Weapon System' id='button' onClick="weaponSystem();">
 </div>
 
 <div id='buttonExplore_ControlRoom' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Stasis Chamber' onClick="picSwitcher('start'); buttonExplore_ControlRoom.style.display='none', buttonStart_Stasis.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Embarkation Room' onClick="picSwitcher('shipMain'); buttonExplore_ControlRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Stasis Chamber' id='button' onClick="picSwitcher('start'); buttonExplore_ControlRoom.style.display='none', buttonStart_Stasis.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Embarkation Room' id='button' onClick="picSwitcher('shipMain'); buttonExplore_ControlRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
 </div>
 
 <div id='buttonSearch_ControlRoom' style="display: none">
-	<input type='button' height='100px' width='200px' value='Access Computer' onClick="advanceTalkCounter=504, advanceTalk(); ">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonSearch_ControlRoom.style.display='none', buttonStart_ControlRoom.style.display='block', advanceTalkCounter=498, advanceTalk();">
+	<input type='button' height='100px' width='200px' value='Access Computer' id='button' onClick="advanceTalkCounter=504, advanceTalk(); ">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonSearch_ControlRoom.style.display='none', buttonStart_ControlRoom.style.display='block', advanceTalkCounter=498, advanceTalk();">
 </div>
 
 <div id='buttonWeaponSystem_ControlRoom' style="display: none">
-	<input type='button' height='100px' width='200px' value='Railgun' onClick="railgun();">
-	<input type='button' height='100px' width='200px' value='Missles' onClick="missles();">
-	<input type='button' height='100px' width='200px' value='Divert Power to Shields' onClick="shields();">
-	<input type='button' height='100px' width='200px' value='Asgard Beam Weapon' onClick="asgardBeam();">
+	<input type='button' height='100px' width='200px' value='Railgun' id='button' title='Fire Railgun, Deals 20 Damage' onClick="railgun();">
+	<input type='button' height='100px' width='200px' value='Missles' id='button' title='Fire Missiles, Deals 20 Damage' onClick="missles();">
+	<input type='button' height='100px' width='200px' value='Divert Power to Shields' title='Divert Power To Shields, Increase Health by 40' id='button' onClick="shields();">
+	<input type='button' height='100px' width='200px' value='Asgard Beam Weapon' title='Fire Asgard Beam Weapon, Deals 60 Damage' id='button' onClick="asgardBeam();">
 </div>
 
 <!--embarkation room-->
 <div id='buttonStart_EmbarkationRoom' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('embarkationRoom');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('embarkationRoom');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('embarkationRoom');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('embarkationRoom');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('embarkationRoom');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('embarkationRoom');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('embarkationRoom');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('embarkationRoom');">
 </div>
 
 <div id='buttonExplore_EmbarkationRoom' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Control Room' onClick="picSwitcher('shipControlRoom'); buttonExplore_EmbarkationRoom.style.display='none', buttonStart_ControlRoom.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Stasis Chamber' onClick="picSwitcher('start'); buttonExplore_EmbarkationRoom.style.display='none', buttonStart_Stasis.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Control Room' id='button' onClick="picSwitcher('shipControlRoom'); buttonExplore_EmbarkationRoom.style.display='none', buttonStart_ControlRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Stasis Chamber' id='button' onClick="picSwitcher('start'); buttonExplore_EmbarkationRoom.style.display='none', buttonStart_Stasis.style.display='block'">
 </div>
 
 <div id='buttonSearch_EmbarkationRoom' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_EmbarkationRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block', advanceTalkCounter=498, advanceTalk();">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_EmbarkationRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block', advanceTalkCounter=498, advanceTalk();">
 </div>
 
 <div id='buttonTeleport_EmbarkationRoom' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Dakara' onClick=" buttonTeleport_EmbarkationRoom.style.display='none', buttonStart_DakaraVillage.style.display='block', picSwitcher('Dakara');">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Dakara' id='button' onClick=" buttonTeleport_EmbarkationRoom.style.display='none', buttonStart_DakaraVillage.style.display='block', picSwitcher('Dakara');">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonTeleport_EmbarkationRoom.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
 </div>
 
 <div id='buttonTeleport_EmbarkationRoom2' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Orilla' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_OrillaCity.style.display='block', picSwitcher('orillaCity');">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Orilla' id='button' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_OrillaCity.style.display='block', picSwitcher('orillaCity');">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonTeleport_EmbarkationRoom2.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
 </div>
 
 <div id='buttonTeleport_EmbarkationRoom3' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Abydos' onClick=" buttonTeleport_EmbarkationRoom3.style.display='none', buttonStart_AbydosPyramid.style.display='block', picSwitcher('abydosPyramid');">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_EmbarkationRoom3.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Abydos' id='button' onClick=" buttonTeleport_EmbarkationRoom3.style.display='none', buttonStart_AbydosPyramid.style.display='block', picSwitcher('abydosPyramid');">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonTeleport_EmbarkationRoom3.style.display='none', buttonStart_EmbarkationRoom.style.display='block'">
 </div>
 
 <!--dakara-->
 <!--village-->
 <div id='buttonStart_DakaraVillage' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('dakaraVillage');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('dakaraVillage');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('dakaraVillage');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('dakaraVillage');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('dakaraVillage');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('dakaraVillage');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('dakaraVillage');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('dakaraVillage');">
 </div>
 
 <div id='buttonExplore_DakaraVillage' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Temple' onClick="picSwitcher('dakaraTemple'); buttonExplore_DakaraVillage.style.display='none', buttonStart_DakaraTemple.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Ruins' onClick="picSwitcher('dakaraRuins'); buttonExplore_DakaraVillage.style.display='none', buttonStart_DakaraRuins.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Temple' id='button' onClick="picSwitcher('dakaraTemple'); buttonExplore_DakaraVillage.style.display='none', buttonStart_DakaraTemple.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Ruins' id='button' onClick="picSwitcher('dakaraRuins'); buttonExplore_DakaraVillage.style.display='none', buttonStart_DakaraRuins.style.display='block'">
 </div>
 
 <div id='buttonSearch_DakaraVillage' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_DakaraVillage.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_DakaraVillage.style.display='none', buttonStart_DakaraVillage.style.display='block'">
 </div>
 
 <div id='buttonTeleport_DakaraVillage' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Ship' onClick=" buttonTeleport_DakaraVillage.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_DakaraVillage.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Ship' id='button' onClick=" buttonTeleport_DakaraVillage.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonTeleport_DakaraVillage.style.display='none', buttonStart_DakaraVillage.style.display='block'">
 </div>
 
 <!--temple-->
 <div id='buttonStart_DakaraTemple' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('dakaraTemple');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('dakaraTemple');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('dakaraTemple');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('dakaraTemple');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('dakaraTemple');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('dakaraTemple');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('dakaraTemple');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('dakaraTemple');">
 </div>
 
 <div id='buttonExplore_DakaraTemple' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Village' onClick="picSwitcher('Dakara'); buttonExplore_DakaraTemple.style.display='none', buttonStart_DakaraVillage.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Ruins' onClick="picSwitcher('dakaraRuins'); buttonExplore_DakaraTemple.style.display='none', buttonStart_DakaraRuins.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Village' id='button' onClick="picSwitcher('Dakara'); buttonExplore_DakaraTemple.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Ruins' id='button' onClick="picSwitcher('dakaraRuins'); buttonExplore_DakaraTemple.style.display='none', buttonStart_DakaraRuins.style.display='block'">
 </div>
 
 <div id='buttonSearch_DakaraTemple' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_DakaraTemple.style.display='none', buttonStart_DakaraTemple.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_DakaraTemple.style.display='none', buttonStart_DakaraTemple.style.display='block'">
 </div>
 
 <!--ruins-->
 <div id='buttonStart_DakaraRuins' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('dakaraRuins');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('dakaraRuins');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('dakaraRuins');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('dakaraRuins');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('dakaraRuins');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('dakaraRuins');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('dakaraRuins');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('dakaraRuins');">
 </div>
 
 <div id='buttonExplore_DakaraRuins' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Village' onClick="picSwitcher('Dakara'); buttonExplore_DakaraRuins.style.display='none', buttonStart_DakaraVillage.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Temple' onClick="picSwitcher('dakaraTemple'); buttonExplore_DakaraRuins.style.display='none', buttonStart_DakaraTemple.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Village' id='button' onClick="picSwitcher('Dakara'); buttonExplore_DakaraRuins.style.display='none', buttonStart_DakaraVillage.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Temple' id='button' onClick="picSwitcher('dakaraTemple'); buttonExplore_DakaraRuins.style.display='none', buttonStart_DakaraTemple.style.display='block'">
 </div>
 
 <div id='buttonSearch_DakaraRuins' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_DakaraRuins.style.display='none', buttonStart_DakaraRuins.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_DakaraRuins.style.display='none', buttonStart_DakaraRuins.style.display='block'">
 </div>
 
 
@@ -207,59 +208,59 @@
 <!--city-->
 
 <div id='buttonStart_OrillaCity' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('orillaCity');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('orillaCity');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('orillaCity');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('orillaCity');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('orillaCity');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('orillaCity');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('orillaCity');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('orillaCity');">
 </div>
 
 <div id='buttonExplore_OrillaCity' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Council' onClick="picSwitcher('orillaCouncil'); buttonExplore_OrillaCity.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Shipyard' onClick="picSwitcher('orillaShipyard'); buttonExplore_OrillaCity.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Council' id='button' onClick="picSwitcher('orillaCouncil'); buttonExplore_OrillaCity.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Shipyard' id='button' onClick="picSwitcher('orillaShipyard'); buttonExplore_OrillaCity.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
 </div>
 
 <div id='buttonSearch_OrillaCity' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_OrillaCity.style.display='none', buttonStart_OrillaCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_OrillaCity.style.display='none', buttonStart_OrillaCity.style.display='block'">
 </div>
 
 <div id='buttonTeleport_OrillaCity' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Ship' onClick=" buttonTeleport_OrillaCity.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_OrillaCity.style.display='none', buttonStart_OrillaCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Ship' id='button' onClick=" buttonTeleport_OrillaCity.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonTeleport_OrillaCity.style.display='none', buttonStart_OrillaCity.style.display='block'">
 </div>
 
 <!--council-->
 
 <div id='buttonStart_OrillaCouncil' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('orillaCouncil');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('orillaCouncil');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('orillaCouncil');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('orillaCouncil');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('orillaCouncil');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('orillaCouncil');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('orillaCouncil');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('orillaCouncil');">
 </div>
 
 <div id='buttonExplore_OrillaCouncil' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('orillaCity'); buttonExplore_OrillaCouncil.style.display='none', buttonStart_OrillaCity.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Shipyard' onClick="picSwitcher('orillaShipyard'); buttonExplore_OrillaCouncil.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
+	<input type='button' height='100px' width='200px' value='City' id='button' onClick="picSwitcher('orillaCity'); buttonExplore_OrillaCouncil.style.display='none', buttonStart_OrillaCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Shipyard' id='button' onClick="picSwitcher('orillaShipyard'); buttonExplore_OrillaCouncil.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
 </div>
 
 <div id='buttonSearch_OrillaCouncil' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_OrillaCouncil.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_OrillaCouncil.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
 </div>
 <!--shipyard-->
 
 <div id='buttonStart_OrillaShipyard' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('orillaShipyard');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('orillaShipyard');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('orillaShipyard');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('orillaShipyard');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('orillaShipyard');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('orillaShipyard');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('orillaShipyard');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('orillaShipyard');">
 </div>
 
 <div id='buttonExplore_OrillaShipyard' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('orillaCity'); buttonExplore_OrillaShipyard.style.display='none', buttonStart_OrillaCity.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Council' onClick="picSwitcher('orillaCouncil'); buttonExplore_OrillaShipyard.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
+	<input type='button' height='100px' width='200px' value='City' id='button' onClick="picSwitcher('orillaCity'); buttonExplore_OrillaShipyard.style.display='none', buttonStart_OrillaCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Council' id='button' onClick="picSwitcher('orillaCouncil'); buttonExplore_OrillaShipyard.style.display='none', buttonStart_OrillaCouncil.style.display='block'">
 </div>
 
 <div id='buttonSearch_OrillaShipyard' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_OrillaShipyard.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_OrillaShipyard.style.display='none', buttonStart_OrillaShipyard.style.display='block'">
 </div>
 
 
@@ -268,19 +269,19 @@
 <!--city-->
 
 <div id='buttonStart_AbydosCity' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('abydosCity');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('abydosCity');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('abydosCity');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('abydosCity');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('abydosCity');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('abydosCity');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('abydosCity');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('abydosCity');">
 </div>
 
 <div id='buttonExplore_AbydosCity' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pyramid' onClick="picSwitcher('abydosPyramid'); buttonExplore_AbydosCity.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Relic' onClick="picSwitcher('abydosRelic'); buttonExplore_AbydosCity.style.display='none', buttonStart_AbydosRelic.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pyramid' id='button' onClick="picSwitcher('abydosPyramid'); buttonExplore_AbydosCity.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Relic' id='button' onClick="picSwitcher('abydosRelic'); buttonExplore_AbydosCity.style.display='none', buttonStart_AbydosRelic.style.display='block'">
 </div>
 
 <div id='buttonSearch_AbydosCity' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosCity.style.display='none', buttonStart_AbydosCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_AbydosCity.style.display='none', buttonStart_AbydosCity.style.display='block'">
 </div>
 
 
@@ -288,42 +289,42 @@
 <!--pyramid-->
 
 <div id='buttonStart_AbydosPyramid' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('abydosPyramid');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('abydosPyramid');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('abydosPyramid');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('abydosPyramid');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('abydosPyramid');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('abydosPyramid');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('abydosPyramid');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('abydosPyramid');">
 </div>
 
 <div id='buttonExplore_AbydosPyramid' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('abydosCity'); buttonExplore_AbydosPyramid.style.display='none', buttonStart_AbydosCity.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Relic' onClick="picSwitcher('abydosRelic'); buttonExplore_AbydosPyramid.style.display='none', buttonStart_AbydosRelic.style.display='block'">
+	<input type='button' height='100px' width='200px' value='City' id='button' onClick="picSwitcher('abydosCity'); buttonExplore_AbydosPyramid.style.display='none', buttonStart_AbydosCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Relic' id='button' onClick="picSwitcher('abydosRelic'); buttonExplore_AbydosPyramid.style.display='none', buttonStart_AbydosRelic.style.display='block'">
 </div>
 
 <div id='buttonSearch_AbydosPyramid' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosPyramid.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button' onClick=" buttonSearch_AbydosPyramid.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
 </div>
 
 <div id='buttonTeleport_AbydosPyramid' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Ship' onClick=" buttonTeleport_AbydosPyramid.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
-	<input type='button' height='100px' width='200px' value='Exit' onClick=" buttonTeleport_AbydosPyramid.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Ship' id='button' onClick=" buttonTeleport_AbydosPyramid.style.display='none', buttonStart_EmbarkationRoom.style.display='block', picSwitcher('shipMain');">
+	<input type='button' height='100px' width='200px' value='Exit' id='button' onClick=" buttonTeleport_AbydosPyramid.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
 </div>
 
 <!--relic-->
 
 <div id='buttonStart_AbydosRelic' style="display: none">
-	<input type='button' height='100px' width='200px' value='Explore' onClick="explore('abydosRelic');">
-	<input type='button' height='100px' width='200px' value='Search' onClick="search('abydosRelic');">
-	<input type='button' height='100px' width='200px' value='Talk' onClick="talk('abydosRelic');">
-	<input type='button' height='100px' width='200px' value='Teleport' onClick="teleport('abydosRelic');">
+	<input type='button' height='100px' width='200px' value='Explore' id='button' onClick="explore('abydosRelic');">
+	<input type='button' height='100px' width='200px' value='Search' id='button' onClick="search('abydosRelic');">
+	<input type='button' height='100px' width='200px' value='Talk' id='button' onClick="talk('abydosRelic');">
+	<input type='button' height='100px' width='200px' value='Teleport' id='button' onClick="teleport('abydosRelic');">
 </div>
 
 <div id='buttonExplore_AbydosRelic' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='City' onClick="picSwitcher('abydosCity'); buttonExplore_AbydosRelic.style.display='none', buttonStart_AbydosCity.style.display='block'">
-	<input type='button' height='100px' width='200px' value='Pyramid' onClick="picSwitcher('abydosPyramid'); buttonExplore_AbydosRelic.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
+	<input type='button' height='100px' width='200px' value='City' id='button' onClick="picSwitcher('abydosCity'); buttonExplore_AbydosRelic.style.display='none', buttonStart_AbydosCity.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pyramid' id='button' onClick="picSwitcher('abydosPyramid'); buttonExplore_AbydosRelic.style.display='none', buttonStart_AbydosPyramid.style.display='block'">
 </div>
 
 <div id='buttonSearch_AbydosRelic' style="display: none" style="display: none">
-	<input type='button' height='100px' width='200px' value='Pickup' onClick=" buttonSearch_AbydosRelic.style.display='none', buttonStart_AbydosRelic.style.display='block'">
+	<input type='button' height='100px' width='200px' value='Pickup' id='button'onClick=" buttonSearch_AbydosRelic.style.display='none', buttonStart_AbydosRelic.style.display='block'">
 </div>
 
 <div id="nameDiv" style="text-align:center" style="display: none">
